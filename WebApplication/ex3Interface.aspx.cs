@@ -22,9 +22,7 @@ namespace WebApplication
                 {
                     conn.ConnectionString = "Server=" + server + ";Database=" + database + ";Trusted_Connection=true";
                     conn.Open();
-                    SqlCommand command = new SqlCommand("IF NOT EXISTS (SELECT * FROM SYSOBJECTS WHERE NAME='SensorData' AND XTYPE='U') CREATE TABLE [" + database + "].[dbo].[SensorData](Id int NOT NULL IDENTITY(1, 1),Humidity nvarchar(MAX) NOT NULL DEFAULT '0',Temperature nvarchar(MAX) NOT NULL DEFAULT '0',PRIMARY KEY(Id))", conn);
-                    command.ExecuteNonQuery();
-                    command = new SqlCommand("SET IDENTITY_INSERT [" + database + "].[dbo].[SensorData] ON;", conn);
+                    SqlCommand command = new SqlCommand("IF NOT EXISTS (SELECT * FROM SYSOBJECTS WHERE NAME='SensorData' AND XTYPE='U') CREATE TABLE [" + database + "].[dbo].[SensorData](Humidity nvarchar(MAX) NOT NULL DEFAULT '0',Temperature nvarchar(MAX) NOT NULL DEFAULT '0')", conn);
                     command.ExecuteNonQuery();
                     conn.Close();
                     update();
@@ -43,9 +41,9 @@ namespace WebApplication
             {
                 try
                 {
-                    while (Table1.Rows.Count > 0)
+                    while (Table1.Rows.Count > 1)
                     {
-                        Table1.Rows.RemoveAt(0);
+                        Table1.Rows.RemoveAt(1);
                     }
                     SqlCommand command = new SqlCommand();
                     conn.ConnectionString = "Server=" + server + ";Database=" + database + ";Trusted_Connection=true";
@@ -59,11 +57,11 @@ namespace WebApplication
                         TableCell cell = new TableCell();
                         TableCell cell1 = new TableCell();
                         TableCell cell2 = new TableCell();
-                        cell.Text = String.Format(Convert.ToString(reader[0]), counter, 1);
+                        cell.Text = String.Format(counter+"", counter, 1);
                         row.Cells.Add(cell);
-                        cell1.Text = String.Format(Convert.ToString(reader[1]), counter, 2);
+                        cell1.Text = String.Format(Convert.ToString(reader[0]), counter, 2);
                         row.Cells.Add(cell1);
-                        cell2.Text = String.Format(Convert.ToString(reader[2]), counter, 3);
+                        cell2.Text = String.Format(Convert.ToString(reader[1]), counter, 3);
                         row.Cells.Add(cell2);
                         Table1.Rows.Add(row);
                         counter++;
@@ -93,7 +91,7 @@ namespace WebApplication
                 {
                     conn.ConnectionString = "Server=" + server + ";Database=" + database + ";Trusted_Connection=true";
                     conn.Open();
-                    SqlCommand command = new SqlCommand("INSERT INTO [" + database + "].[dbo].[SensorData](Id,Humidity,Temperature) VALUES('" + counter + "','" + Humidity + "','" + Temperature +"');", conn);
+                    SqlCommand command = new SqlCommand("INSERT INTO [" + database + "].[dbo].[SensorData](Humidity,Temperature) VALUES('"+Humidity + "','" + Temperature +"');", conn);
                     command.ExecuteNonQuery();
                     conn.Close();
                 }

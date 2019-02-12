@@ -22,8 +22,8 @@
             <br />
             <asp:Button ID="clearBtn" runat="server" Text="Clear" OnClick="clearBtn_Click" />
             <asp:Button ID="enterBtn" runat="server" OnClick="enterBtn_Click" Text="Save" />
-            <asp:Table ID="Table1" runat="server" CellPadding="0" CellSpacing="0" Height="34px" Width="349px" HorizontalAlign="Center">
-                <asp:TableRow runat="server" Font-Bold="True" Font-Names="Aharoni" HorizontalAlign="Center" VerticalAlign="Top">
+            <asp:Table ID="Table1" runat="server" CellPadding="2" CellSpacing="0" Height="34px" Width="281px" BorderColor="Black" BorderStyle="Outset" BorderWidth="1px" GridLines="Both" HorizontalAlign="Center">
+                <asp:TableRow runat="server" Font-Bold="True" Font-Names="Aharoni" HorizontalAlign="Center" VerticalAlign="Top" Width="50px">
                     <asp:TableCell runat="server">No.</asp:TableCell>
                     <asp:TableCell runat="server">Humidity</asp:TableCell>
                     <asp:TableCell runat="server">Temperature</asp:TableCell>
