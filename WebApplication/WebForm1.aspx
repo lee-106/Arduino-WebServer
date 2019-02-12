@@ -4,6 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <LINK href="framework.css" 
+type="text/css" rel="stylesheet">
     <title></title>
 </head>
 <body style="height: 218px; width: 508px">

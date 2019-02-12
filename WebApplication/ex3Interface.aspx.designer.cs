@@ -10,7 +10,7 @@
 namespace WebApplication {
     
     
-    public partial class ex3Form {
+    public partial class ex3Interface {
         
         /// <summary>
         /// form1 control.
@@ -31,57 +31,66 @@ namespace WebApplication {
         protected global::System.Web.UI.WebControls.Button backBtn;
         
         /// <summary>
-        /// intBtn control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button intBtn;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// titleText control.
+        /// humidityText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label titleText;
+        protected global::System.Web.UI.WebControls.Label humidityText;
         
         /// <summary>
-        /// ObjTitle control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ObjTitle;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// ObjectivesText control.
+        /// tempText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ObjectivesText;
+        protected global::System.Web.UI.WebControls.Label tempText;
         
         /// <summary>
-        /// procedueTitle control.
+        /// clearBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label procedueTitle;
+        protected global::System.Web.UI.WebControls.Button clearBtn;
         
         /// <summary>
-        /// ProcedureText control.
+        /// enterBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ProcedureText;
+        protected global::System.Web.UI.WebControls.Button enterBtn;
+        
+        /// <summary>
+        /// Table1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table Table1;
     }
 }

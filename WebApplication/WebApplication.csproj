@@ -122,6 +122,7 @@
     <Content Include="ex1Form.aspx" />
     <Content Include="ex2Form.aspx" />
     <Content Include="ex3Form.aspx" />
+    <Content Include="ex3Interface.aspx" />
     <Content Include="ex4Form.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -214,6 +215,13 @@
     </Compile>
     <Compile Include="ex3Form.aspx.designer.cs">
       <DependentUpon>ex3Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ex3Interface.aspx.cs">
+      <DependentUpon>ex3Interface.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ex3Interface.aspx.designer.cs">
+      <DependentUpon>ex3Interface.aspx</DependentUpon>
     </Compile>
     <Compile Include="ex4Form.aspx.cs">
       <DependentUpon>ex4Form.aspx</DependentUpon>
