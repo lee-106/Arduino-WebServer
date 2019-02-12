@@ -8,14 +8,20 @@ using System.Web.UI.WebControls;
 
 namespace WebApplication
 {
+
     public partial class ex3Interface : System.Web.UI.Page
     {
-        String server = "INICCALEE-PC";
-        String database = "myWebDB";
 
+        DTBdata fetch = new DTBdata();
+        String server;
+        String database;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            server = fetch.returnServer();
+            database = fetch.returnDB();
+
             using (SqlConnection conn = new SqlConnection())
             {
                 try
@@ -37,6 +43,7 @@ namespace WebApplication
 
         public void update()
         {
+
             using (SqlConnection conn = new SqlConnection())
             {
                 try

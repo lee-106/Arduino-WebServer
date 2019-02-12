@@ -120,10 +120,13 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="ex1Form.aspx" />
+    <Content Include="ex1Interface.aspx" />
     <Content Include="ex2Form.aspx" />
+    <Content Include="ex2Interface.aspx" />
     <Content Include="ex3Form.aspx" />
     <Content Include="ex3Interface.aspx" />
     <Content Include="ex4Form.aspx" />
+    <Content Include="ex4Interface.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -181,6 +184,7 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="DTBdata.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -202,12 +206,26 @@
     <Compile Include="ex1Form.aspx.designer.cs">
       <DependentUpon>ex1Form.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ex1Interface.aspx.cs">
+      <DependentUpon>ex1Interface.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ex1Interface.aspx.designer.cs">
+      <DependentUpon>ex1Interface.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ex2Form.aspx.cs">
       <DependentUpon>ex2Form.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ex2Form.aspx.designer.cs">
       <DependentUpon>ex2Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ex2Interface.aspx.cs">
+      <DependentUpon>ex2Interface.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ex2Interface.aspx.designer.cs">
+      <DependentUpon>ex2Interface.aspx</DependentUpon>
     </Compile>
     <Compile Include="ex3Form.aspx.cs">
       <DependentUpon>ex3Form.aspx</DependentUpon>
@@ -229,6 +247,13 @@
     </Compile>
     <Compile Include="ex4Form.aspx.designer.cs">
       <DependentUpon>ex4Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ex4Interface.aspx.cs">
+      <DependentUpon>ex4Interface.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ex4Interface.aspx.designer.cs">
+      <DependentUpon>ex4Interface.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

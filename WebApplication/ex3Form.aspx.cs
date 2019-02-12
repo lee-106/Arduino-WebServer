@@ -11,11 +11,15 @@ namespace WebApplication
 
     public partial class ex3Form : System.Web.UI.Page
     {
-        String server = "INICCALEE-PC";
-        String database = "myWebDB";
+        DTBdata fetch = new DTBdata();
+        String server;
+        String database;
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            server = fetch.returnServer();
+            database = fetch.returnDB();
+
             using (SqlConnection conn = new SqlConnection())
             {
                 conn.ConnectionString = "Server=" + server + ";Database=" + database + ";Trusted_Connection=true";
