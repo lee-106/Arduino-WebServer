@@ -28,7 +28,7 @@ namespace WebApplication
                 try
                 {
                     conn.Open();
-                    command = new SqlCommand("SELECT * FROM ["+database+"].[dbo].[Experiment] WHERE Id = '3';", conn);
+                    command = new SqlCommand("SELECT * FROM ["+database+ "].[dbo].[ExperimentList] WHERE Id = '3';", conn);
                     reader=command.ExecuteReader();
                     reader.Read();
                     titleText.Text = reader.GetString(1);

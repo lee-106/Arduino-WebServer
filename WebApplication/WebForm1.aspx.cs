@@ -11,7 +11,8 @@ namespace WebApplication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            DTBdata fetch = new DTBdata();
+            fetch.UpdateTable();
         }
 
         protected void ex1Btn_Click(object sender, EventArgs e)
