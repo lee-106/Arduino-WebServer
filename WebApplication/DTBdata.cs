@@ -14,7 +14,7 @@ namespace WebApplication
         }
         public String returnServer()
         {
-            return "INICCALEE-PC";
+            return "PAULOPC\\SQLEXPRESS";
         }
 
         public void UpdateTable()
@@ -34,9 +34,9 @@ namespace WebApplication
                         
                         command = new SqlCommand("CREATE TABLE [" + database + "].[dbo].[ExperimentList](Id int NOT NULL IDENTITY(1,1),Title varchar(50) NOT NULL DEFAULT '0',Objectives nvarchar(MAX) NOT NULL DEFAULT '0', Procedures1 nvarchar(MAX) NOT NULL DEFAULT '0',PRIMARY KEY(Id))", conn);
                         command.ExecuteNonQuery();
-                        command = new SqlCommand("INSERT INTO ExperimentList(Title,Objectives,Procedures1) VALUES('Interfacing Arduino and WiFi Shield','-To interface the WiFi shield to the Arduino\n-To build a simple Web application to interface with the WiFi shield\n-To test the connectivity by lighting an LED through the system','-Procedure1\n-Procedure2\n-Procedure3')", conn);
+                        command = new SqlCommand("INSERT INTO ExperimentList(Title,Objectives,Procedures1) VALUES('Familiarization With Arduino','-To familiarize with the basics of using the arduino.\n-To interface the arduino input and output pins.','-Procedure1\n-Procedure2\n-Procedure3')", conn);
                         command.ExecuteNonQuery();
-                        command = new SqlCommand("INSERT INTO ExperimentList(Title,Objectives,Procedures1) VALUES('Light Intensity Control of a Lamp','-To interface the PWM control of the arduino\n-To turn the lamp on and off using a WebApp\n-To control the light intensity using a control interface in the WebApp.','-Procedure1\n-Procedure2\n-Procedure3')", conn);
+                        command = new SqlCommand("INSERT INTO ExperimentList(Title,Objectives,Procedures1) VALUES('Interfacing Arduino with Web App','-To interface with the Arduino and WiFi shield.\n - To test the connectivity by turning an LED on and off through the system.\n - To interface the PWM control of the arduino.\n-To control the light intensity using a control interface in the WebApp.','-Procedure1\n-Procedure2\n-Procedure3')", conn);
                         command.ExecuteNonQuery();
                         command = new SqlCommand("INSERT INTO ExperimentList(Title,Objectives,Procedures1) VALUES('Sending input from Arduino to Web App','-To process information from Arduino to Web App\n- To display the detected humidity and temperature from DHT11 Sensor\n-To be able to save the displayed data using button input',' - Procedure1\n-Procedure2\n-Procedure3')", conn);
                         command.ExecuteNonQuery();
