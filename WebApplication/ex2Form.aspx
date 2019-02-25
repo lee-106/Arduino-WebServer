@@ -23,7 +23,7 @@
             <br />
             <asp:Label ID="procedueTitle" runat="server" Font-Bold="True" Font-Names="Aharoni" Font-Size="Large" Text="Procedures:"></asp:Label>
             <br />
-            <asp:TextBox ID="ProcedureText" runat="server" BorderColor="Black" BorderStyle="Ridge" Font-Names="Aharoni" Height="114px" TextMode="MultiLine" Width="578px"> hello</asp:TextBox>
+            <asp:TextBox ID="ProcedureText" runat="server" BorderColor="Black" BorderStyle="Ridge" Font-Names="Aharoni" Height="114px" TextMode="MultiLine" Width="578px" OnTextChanged="ProcedureText_TextChanged"> hello</asp:TextBox>
         </div>
     </form>
 </body>

@@ -51,5 +51,10 @@ namespace WebApplication
         {
             Response.Redirect("ex2Interface.aspx");
         }
+
+        protected void ProcedureText_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
