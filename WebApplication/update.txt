@@ -1,0 +1,119 @@
+﻿USE [master]
+GO
+USE [myWebDB]
+GO
+IF EXISTS (SELECT * FROM SYSOBJECTS WHERE NAME='objTable' AND XTYPE='U') DROP TABLE [dbo].[objTable]
+GO
+IF EXISTS (SELECT * FROM SYSOBJECTS WHERE NAME='titleTable' AND XTYPE='U') DROP TABLE [dbo].[titleTable]
+GO
+IF EXISTS (SELECT * FROM SYSOBJECTS WHERE NAME='procTable' AND XTYPE='U') DROP TABLE [dbo].[procTable]
+GO
+/****** Object:  Table [dbo].[objTable]    Script Date: 2/25/2019 3:15:18 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[objTable](
+	[objective] [nvarchar](max) NOT NULL,
+	[number] [int] NOT NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[proctable]    Script Date: 2/25/2019 3:15:18 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[proctable](
+	[instructions] [nvarchar](max) NOT NULL,
+	[in_number] [int] NOT NULL,
+	[number] [int] NOT NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[titleTable]    Script Date: 2/25/2019 3:15:18 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[titleTable](
+	[Number] [int] NOT NULL,
+	[Title] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_Titletable] PRIMARY KEY CLUSTERED 
+(
+	[Number] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To familiarize with the basics of Arduinno', 1)
+GO
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To interface Arduino with input and output pins ', 1)
+GO
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To interface with the Arduino and the Wifi Shield', 2)
+GO
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To test the connectivity by turning a LED on and off through the system', 2)
+GO
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To interface the PWM control the Arduino', 2)
+GO
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To control the light intensity using a control interface in the Web App', 2)
+GO
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To process information from Arduino to Web App
+', 3)
+GO
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To display the detected humidity and temperature from DHT11 Sensor
+', 3)
+GO
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To be able to save the displayed data using button input
+', 3)
+GO
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'Create a hardware interface (button, for rock, paper, and scissors)
+', 4)
+GO
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'Create the game rules (to be done by the user)
+', 4)
+GO
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'Connect 2 arduinos via UART
+', 4)
+GO
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'Display the score of both sides in the Web App
+', 4)
+GO
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'Displays what the user inputs are on Web App
+', 4)
+GO
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'Optional: 7-Segment Display
+', 4)
+GO
+INSERT [dbo].[proctable] ([instructions], [in_number], [number]) VALUES (N'Procedure1', 1, 1)
+GO
+INSERT [dbo].[proctable] ([instructions], [in_number], [number]) VALUES (N'Procedure2', 2, 1)
+GO
+INSERT [dbo].[proctable] ([instructions], [in_number], [number]) VALUES (N'Procedure3', 3, 1)
+GO
+INSERT [dbo].[proctable] ([instructions], [in_number], [number]) VALUES (N'Procedure1', 1, 2)
+GO
+INSERT [dbo].[proctable] ([instructions], [in_number], [number]) VALUES (N'Procedure2', 2, 2)
+GO
+INSERT [dbo].[proctable] ([instructions], [in_number], [number]) VALUES (N'Procedure3', 3, 2)
+GO
+INSERT [dbo].[proctable] ([instructions], [in_number], [number]) VALUES (N'Procedure1', 1, 3)
+GO
+INSERT [dbo].[proctable] ([instructions], [in_number], [number]) VALUES (N'Procedure2', 2, 3)
+GO
+INSERT [dbo].[proctable] ([instructions], [in_number], [number]) VALUES (N'Procedure3', 3, 3)
+GO
+INSERT [dbo].[proctable] ([instructions], [in_number], [number]) VALUES (N'Procedure1', 1, 4)
+GO
+INSERT [dbo].[proctable] ([instructions], [in_number], [number]) VALUES (N'Procedure2', 2, 4)
+GO
+INSERT [dbo].[proctable] ([instructions], [in_number], [number]) VALUES (N'Procedure3', 3, 4)
+GO
+INSERT [dbo].[titleTable] ([Number], [Title]) VALUES (1, N'Familiarization with Arduino')
+GO
+INSERT [dbo].[titleTable] ([Number], [Title]) VALUES (2, N'Interfacing Arduino with Web App')
+GO
+INSERT [dbo].[titleTable] ([Number], [Title]) VALUES (3, N'Sending Input from Arduino to Web App')
+GO
+INSERT [dbo].[titleTable] ([Number], [Title]) VALUES (4, N'Rock,Paper,Scissors Game')
+GO

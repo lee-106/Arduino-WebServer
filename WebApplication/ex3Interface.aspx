@@ -13,11 +13,11 @@
             <br />
             <br />
             <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Names="Aharoni" Font-Size="X-Large" Text="Humidity:"></asp:Label>
-            <asp:Label ID="humidityText" runat="server" Font-Names="Berlin Sans FB" Font-Size="X-Large"></asp:Label>
+            <asp:Label ID="humidityText" runat="server" Font-Names="Berlin Sans FB" Font-Size="X-Large">100</asp:Label>
             <br />
             <br />
             <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Names="Aharoni" Font-Size="X-Large" Text="Temperature:"></asp:Label>
-            <asp:Label ID="tempText" runat="server" Font-Names="Berlin Sans FB" Font-Size="X-Large"></asp:Label>
+            <asp:Label ID="tempText" runat="server" Font-Names="Berlin Sans FB" Font-Size="X-Large">100</asp:Label>
             <br />
             <br />
             <asp:Button ID="clearBtn" runat="server" Text="Clear" OnClick="clearBtn_Click" />

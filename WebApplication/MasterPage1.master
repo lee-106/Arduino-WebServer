@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>business</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body runat="server">
+<div id="wrapper">
+	<div id="logo">
+		<h1>&nbsp;</h1>
+  </div>
+	<hr />
+	<!-- end #logo -->
+	<div id="header">
+		<div id="menu">
+			<ul>
+				<li><a href="WebForm3.aspx" class="first">Home</a></li>
+				
+				<li><a href="#">Photos</a></li>
+				<li><a href="about.aspx">About</a></li>
+				<li><a href="#">Links</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</div>
+		<!-- end #menu -->
+		<div id="search">
+			<form method="get" action="">
+				<fieldset>
+				<input type="text" name="s" id="search-text" size="15" />
+				<input type="submit" id="search-submit" value="GO" />
+				</fieldset>
+			</form>
+		</div>
+		<!-- end #search -->
+	</div>
+	<!-- end #header -->
+	<!-- end #header-wrapper -->
+	<div id="page">
+		<div id="content">
+			<div id="banner"><img src="images/banner.jpg" alt="" /></div>
+			<div class="post">
+                
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" >
+                    
+                </asp:ContentPlaceHolder>
+                 
+				
+			</div>
+			
+		</div>
+		<!-- end #content -->
+		<div id="sidebar">
+			<ul>
+				<li>
+					<h2>About this Site </h2>
+					<p>This site is created as a requirement for CPLCTV3. Educational purpose only. </p>
+				</li>
+				<li>
+					<h2>Site Content</h2>
+					<ul>
+						<li><a href="#">Login Page</a></li>
+						<li><a href="#">Register Page</a></li>
+						<li><a href="#">Quiz page</a></li>
+						<li><a href="#">Arduino Experiments</a></li>
+						<li><a href="#">Raspberry Pi Experiments</a></li>
+						<li><a href="#">Two-factor Authentication</a></li>
+						
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	<!-- end #page -->
+	<div id="footer-bgcontent">
+	<div id="footer">
+		<p>Design by <a href="http://www.worldclasslasik.com">new york lasik</a> and <a href="http://www.getnetset.com">cpa websites</a></p>
+	</div>
+	</div>
+	<!-- end #footer -->
+</div>
+</body>
+</html>
