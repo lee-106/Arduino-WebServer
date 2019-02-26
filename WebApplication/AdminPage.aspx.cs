@@ -16,7 +16,9 @@ namespace WebApplication
         SqlConnection conn;
         protected void Page_Load(object sender, EventArgs e)
         {
-            conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myWebDBConnectionString"].ConnectionString);
+            conn = new SqlConnection(ConfigurationManager.ConnectionStrings["MyWebDBConnectionString"].ConnectionString);
+         
+            indexLabel.Text = expddlist.SelectedIndex +"";
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -25,17 +27,20 @@ namespace WebApplication
             try
             {
                 conn.Open();
-                if (expddlist.SelectedValue == "1")
-                {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO [objTable](objective) VALUES (@objective) WHERE number = '1'", conn);
+                
+                    SqlCommand cmd = new SqlCommand("INSERT INTO [objTable](objective, number) VALUES (@objective, @index) ", conn);
                     cmd.Parameters.AddWithValue("@objective", objtext.Text);
+                    cmd.Parameters.AddWithValue("@index", (expddlist.SelectedIndex+1)+"");
                     cmd.ExecuteNonQuery();
-                    SqlCommand cmd1 = new SqlCommand("INSERT INTO [proctable](instructions, in_number) VALUES (@instructions, @in_number) WHERE number = '1'", conn);
+                    SqlCommand cmd1 = new SqlCommand("INSERT INTO [proctable](instructions, in_number, number) VALUES (@instructions, @in_number, @number) ", conn);
                     cmd1.Parameters.AddWithValue("@instructions", proctext.Text);
                     cmd1.Parameters.AddWithValue("@in_number", procntxt.Text);
-                    cmd1.ExecuteNonQuery();
-                    Response.Redirect("AdminPage.aspx");
-                }
+                cmd1.Parameters.AddWithValue("@number", (expddlist.SelectedIndex + 1) + "");
+                cmd1.ExecuteNonQuery();
+                    
+                
+                conn.Close();
+                Response.Redirect("AdminPage.aspx");
             }
             catch(SystemException)
             {
@@ -43,7 +48,8 @@ namespace WebApplication
             }
             finally
             {
-                conn.Close();
+                
+                
             }
         }
 

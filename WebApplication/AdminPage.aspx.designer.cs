@@ -49,6 +49,24 @@ namespace WebApplication {
         protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
+        /// label4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label label4;
+        
+        /// <summary>
+        /// indexLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label indexLabel;
+        
+        /// <summary>
         /// ObjGrid control.
         /// </summary>
         /// <remarks>

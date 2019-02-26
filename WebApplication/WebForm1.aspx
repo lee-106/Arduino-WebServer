@@ -1,14 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="WebApplication.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPage1.master" CodeBehind="WebForm1.aspx.cs" Inherits="WebApplication.WebForm1" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <LINK href="framework.css" 
-type="text/css" rel="stylesheet">
-    <title></title>
-</head>
-<body style="height: 218px; width: 508px">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
         <div style="height: 500px">
             <asp:Label ID="Label1" runat="server" BackColor="#CCFFFF" BorderColor="Red" BorderStyle="Double" Text="Experiment list for Arduino:" Width="500px"></asp:Label>
@@ -20,5 +12,4 @@ type="text/css" rel="stylesheet">
             <asp:Button ID="adminpage_btn" runat="server" Font-Names="Aharoni" OnClick="adminpage_btn_Click" Text="Go To AdminPage" />
         </div>
     </form>
-</body>
-</html>
+</asp:Content>

@@ -1,12 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminPage.aspx.cs" Inherits="WebApplication.WebForm2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPage1.master" CodeBehind="AdminPage.aspx.cs" Inherits="WebApplication.WebForm2" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
         <div>
             <asp:DropDownList ID="expddlist" runat="server" DataSourceID="DDLDataSource" DataTextField="Title" DataValueField="Number" OnSelectedIndexChanged="expddlist_SelectedIndexChanged" AutoPostBack="True">
@@ -15,6 +9,8 @@
         </div>
         <p>
             <asp:Button ID="Button2" runat="server" Text="Edit" OnClick="Button2_Click" />
+            <asp:Label ID="label4" runat="server" Text="Selected Index:"></asp:Label>
+            <asp:Label ID="indexLabel" runat="server" Text="0"></asp:Label>
             <asp:GridView ID="ObjGrid" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" ViewStateMode="Enabled">
                 <Columns>
                     <asp:BoundField DataField="objective" HeaderText="Objectives:" SortExpression="objective" />
@@ -50,5 +46,4 @@
             <asp:Button ID="Button1" runat="server" Text="Add" OnClick="Button1_Click" />
             </p>
     </form>
-</body>
-</html>
+</asp:Content>
