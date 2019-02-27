@@ -16,7 +16,7 @@ namespace WebApplication
         }
         public String returnServer()
         {
-            return "INICCALEE-PC";
+            return "LYLE-PC";
         }
 
         public void UpdateTable()

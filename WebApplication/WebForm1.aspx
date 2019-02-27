@@ -17,6 +17,7 @@ type="text/css" rel="stylesheet">
             <asp:Button ID="ex2Btn" runat="server" BackColor="#FFFF99" BorderStyle="Groove" Font-Bold="True" Font-Size="Large" ForeColor="Black" Height="46px" OnClick="ex2Btn_Click" Text="Experiment 2" Width="500px" />
             <asp:Button ID="ex3Btn" runat="server" BackColor="#FFFF99" BorderStyle="Groove" Font-Bold="True" Font-Size="Large" ForeColor="Black" Height="46px" OnClick="ex3Btn_Click" Text="Experiment 3" Width="500px" />
             <asp:Button ID="ex4Btn" runat="server" BackColor="#FFFF99" BorderStyle="Groove" Font-Bold="True" Font-Size="Large" ForeColor="Black" Height="46px" OnClick="ex4Btn_Click" Text="Experiment 4" Width="500px" />
+            <asp:Button ID="adminpage_btn" runat="server" Font-Names="Aharoni" OnClick="adminpage_btn_Click" Text="Go To AdminPage" />
         </div>
     </form>
 </body>

@@ -34,5 +34,10 @@ namespace WebApplication
         {
             Response.Redirect("ex4Form.aspx");
         }
+
+        protected void adminpage_btn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminPage.aspx");
+        }
     }
 }
