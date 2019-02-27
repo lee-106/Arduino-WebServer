@@ -56,6 +56,23 @@ namespace WebApplication
         protected void Button2_Click(object sender, EventArgs e)
         {
             //EDIT
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE [proctable] SET instructions = @instructions WHERE number = '" + (expddlist.SelectedIndex + 1) + "' AND in_number = '" + procntxt.Text + "';",conn);
+                cmd.Parameters.AddWithValue("@instructions", proctext.Text);
+                cmd.ExecuteNonQuery();
+                Response.Redirect("AdminPage.aspx");
+            }
+            catch(SystemException)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         protected void expddlist_SelectedIndexChanged(object sender, EventArgs e)
