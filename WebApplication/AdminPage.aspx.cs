@@ -18,7 +18,6 @@ namespace WebApplication
         {
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["MyWebDBConnectionString"].ConnectionString);
          
-            indexLabel.Text = expddlist.SelectedIndex +"";
         }
 
         protected void Button1_Click(object sender, EventArgs e)
