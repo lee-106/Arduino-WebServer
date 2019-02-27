@@ -14,7 +14,6 @@
             <asp:SqlDataSource ID="DDLDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:myWebDBConnectionString %>" SelectCommand="SELECT [Number], [Title] FROM [titleTable]"></asp:SqlDataSource>
         </div>
         <p>
-            <asp:Button ID="Button1" runat="server" Text="Add" OnClick="Button1_Click" />
             <asp:Button ID="Button2" runat="server" Text="Edit" OnClick="Button2_Click" />
             <asp:GridView ID="ObjGrid" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" ViewStateMode="Enabled">
                 <Columns>
@@ -37,7 +36,19 @@
                     <asp:ControlParameter ControlID="expddlist" Name="number" PropertyName="SelectedValue" Type="Int32" />
                 </SelectParameters>
             </asp:SqlDataSource>
+            <asp:Label ID="Label1" runat="server" Text="Objective:"></asp:Label>
+            <asp:TextBox ID="objtext" runat="server" Width="179px"></asp:TextBox>
         </p>
+        <p>
+            <asp:Label ID="Label2" runat="server" Text="Procedure:"></asp:Label>
+            <asp:TextBox ID="procntxt" runat="server" Width="18px"></asp:TextBox>
+            <asp:TextBox ID="proctext" runat="server" Width="147px"></asp:TextBox>
+        </p>
+        <p>
+            &nbsp;</p>
+        <p>
+            <asp:Button ID="Button1" runat="server" Text="Add" OnClick="Button1_Click" />
+            </p>
     </form>
 </body>
 </html>
