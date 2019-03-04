@@ -12,11 +12,11 @@ namespace WebApplication
     {
         public String returnDB()
         {
-            return "MyWebDB";
+            return "DTBdata";
         }
         public String returnServer()
         {
-            return "LYLE-PC";
+            return "NEIL\\SQLEXPRESS";
         }
 
         public void UpdateTable()
