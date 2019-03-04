@@ -13,10 +13,13 @@ namespace WebApplication
         {
 
         }
-
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        protected void Connect_Btn_Click(object sender, EventArgs e)
         {
 
+        }
+        protected void Port_TB_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
