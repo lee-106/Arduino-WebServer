@@ -259,3 +259,10 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+
+WebApplication\DTBdata.cs
+WebApplication\update.txt
+WebApplication\Web.config
+WebApplication/DTBdata.cs~33f9b6c2c576edf88ec241ed39b149d0936b095e
+WebApplication/Web.config~33f9b6c2c576edf88ec241ed39b149d0936b095e
+WebApplication/update.txt
