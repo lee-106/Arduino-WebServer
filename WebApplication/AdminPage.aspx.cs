@@ -79,6 +79,10 @@ namespace WebApplication
             ObjGrid.DataBind();
             ProcedureGrid.DataBind();
         }
-        
+
+        protected void ProcedureGrid_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

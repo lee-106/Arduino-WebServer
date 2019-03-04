@@ -3,13 +3,38 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
         <div style="height: 500px">
-            <asp:Label ID="Label1" runat="server" BackColor="#CCFFFF" BorderColor="Red" BorderStyle="Double" Text="Experiment list for Arduino:" Width="500px"></asp:Label>
             <br />
-            <asp:Button ID="ex1Btn" runat="server" BackColor="#FFFF99" BorderStyle="Groove" Font-Bold="True" Font-Size="Large" ForeColor="Black" Height="46px" OnClick="ex1Btn_Click" Text="Experiment 1" Width="500px" />
-            <asp:Button ID="ex2Btn" runat="server" BackColor="#FFFF99" BorderStyle="Groove" Font-Bold="True" Font-Size="Large" ForeColor="Black" Height="46px" OnClick="ex2Btn_Click" Text="Experiment 2" Width="500px" />
-            <asp:Button ID="ex3Btn" runat="server" BackColor="#FFFF99" BorderStyle="Groove" Font-Bold="True" Font-Size="Large" ForeColor="Black" Height="46px" OnClick="ex3Btn_Click" Text="Experiment 3" Width="500px" />
-            <asp:Button ID="ex4Btn" runat="server" BackColor="#FFFF99" BorderStyle="Groove" Font-Bold="True" Font-Size="Large" ForeColor="Black" Height="46px" OnClick="ex4Btn_Click" Text="Experiment 4" Width="500px" />
-            <asp:Button ID="adminpage_btn" runat="server" Font-Names="Aharoni" OnClick="adminpage_btn_Click" Text="Go To AdminPage" />
+            <p>
+
+                <asp:TreeView ID="TreeView1" runat="server">
+                    <Nodes>
+                        <asp:TreeNode Value="ListDef" Text="Arduino Experiments List: " Target="Content" Expanded="True">
+                            <asp:TreeNode Value="Exp1" NavigateUrl="~/ex1Form.aspx" Text="Experiment 1: Familiarization with Arduino" Target="Content">
+                                <asp:TreeNode Value="Def1" Text="Experiment 1 is yadayada yada yada" Target="Content"></asp:TreeNode>
+                            </asp:TreeNode>
+                            <asp:TreeNode Value="Exp1" NavigateUrl="~/ex1Form.aspx" Text="Experiment 2: Interfacing Arduino with Web Application" Target="Content">
+                                <asp:TreeNode Value="Def1" Text="Experiment 2 is yadayada yada yada" Target="Content"></asp:TreeNode>
+                            </asp:TreeNode>
+                            <asp:TreeNode Value="Exp1" NavigateUrl="~/ex1Form.aspx" Text="Experiment 3: Sending Input from Arduino to Web Application" Target="Content">
+                                <asp:TreeNode Value="Def1" Text="Experiment 3 is yadayada yada yada" Target="Content"></asp:TreeNode>
+                            </asp:TreeNode>
+                            <asp:TreeNode Value="Exp1" NavigateUrl="~/ex1Form.aspx" Text="Experiment 4: Rock, Paper, Scissors Game" Target="Content">
+                                <asp:TreeNode Value="Def1" Text="The fourth experiment is the integration of all the experiences <br />
+                                    and learning of the previous experiments in the form of the Rock, <br /> Paper, Scissors Game. 
+                                    With this application, the student is set <br /> to understand how to interface the Arduino and its control <br /> 
+                                    features to the web application." Target="Content"></asp:TreeNode>
+                            </asp:TreeNode>
+
+                        </asp:TreeNode>
+                    </Nodes>
+                    <NodeStyle Font-Italic="True" Font-Names="Courier New" Font-Size="Small" ForeColor="#66FFCC" />
+                    <ParentNodeStyle Font-Italic="True" />
+                    <RootNodeStyle Font-Bold="True" Font-Names="Century Gothic" Font-Size="Medium" ForeColor="#009933" Height="20px" />
+                </asp:TreeView>
+
+            </p>
+            <br />
+            <asp:Button ID="adminpage_btn" runat="server" Font-Names="Century" OnClick="adminpage_btn_Click" Text="Enter as Admin" BackColor="#333333" BorderColor="#CCCCCC" ForeColor="#CCCCCC" />
         </div>
     </form>
 </asp:Content>

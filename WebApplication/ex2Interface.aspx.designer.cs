@@ -31,13 +31,31 @@ namespace WebApplication {
         protected global::System.Web.UI.WebControls.Button backBtn;
         
         /// <summary>
-        /// Panel1 control.
+        /// Port_TB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
+        protected global::System.Web.UI.WebControls.TextBox Port_TB;
+        
+        /// <summary>
+        /// Connect_Btn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Connect_Btn;
+        
+        /// <summary>
+        /// update_Lbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label update_Lbl;
         
         /// <summary>
         /// Intensity_label control.
@@ -49,12 +67,21 @@ namespace WebApplication {
         protected global::System.Web.UI.WebControls.Label Intensity_label;
         
         /// <summary>
-        /// IntensityText control.
+        /// Intensity_TB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox IntensityText;
+        protected global::System.Web.UI.WebControls.TextBox Intensity_TB;
+        
+        /// <summary>
+        /// EnterIntensity_Btn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button EnterIntensity_Btn;
     }
 }
