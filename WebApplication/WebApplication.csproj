@@ -51,6 +51,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -127,6 +128,7 @@
     <Content Include="ex3Interface.aspx" />
     <Content Include="ex4Form.aspx" />
     <Content Include="ex4Interface.aspx" />
+    <Content Include="experiments.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -272,6 +274,13 @@
     </Compile>
     <Compile Include="ex4Interface.aspx.designer.cs">
       <DependentUpon>ex4Interface.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="experiments.aspx.cs">
+      <DependentUpon>experiments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="experiments.aspx.designer.cs">
+      <DependentUpon>experiments.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

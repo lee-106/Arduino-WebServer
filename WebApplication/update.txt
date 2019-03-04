@@ -1,6 +1,6 @@
 ﻿USE [master]
 GO
-USE [DTBdata]
+USE [myWebDB]
 GO
 IF EXISTS (SELECT * FROM SYSOBJECTS WHERE NAME='objTable' AND XTYPE='U') DROP TABLE [dbo].[objTable]
 GO

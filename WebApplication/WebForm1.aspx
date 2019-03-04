@@ -6,20 +6,20 @@
             <br />
             <p>
 
-                <asp:TreeView ID="TreeView1" runat="server">
+                <asp:TreeView ID="TreeView1" runat="server" OnSelectedNodeChanged="TreeView1_SelectedNodeChanged">
                     <Nodes>
                         <asp:TreeNode Value="ListDef" Text="Arduino Experiments List: " Target="Content" Expanded="True">
-                            <asp:TreeNode Value="Exp1" NavigateUrl="~/ex1Form.aspx" Text="Experiment 1: Familiarization with Arduino" Target="Content">
+                            <asp:TreeNode Value="Exp1" Text="Experiment 1: Familiarization with Arduino" Target="Content">
                                 <asp:TreeNode Value="Def1" Text="Experiment 1 is yadayada yada yada" Target="Content"></asp:TreeNode>
                             </asp:TreeNode>
-                            <asp:TreeNode Value="Exp1" NavigateUrl="~/ex1Form.aspx" Text="Experiment 2: Interfacing Arduino with Web Application" Target="Content">
+                            <asp:TreeNode Value="Exp2" Text="Experiment 2: Interfacing Arduino with Web Application" Target="Content">
                                 <asp:TreeNode Value="Def1" Text="Experiment 2 is yadayada yada yada" Target="Content"></asp:TreeNode>
                             </asp:TreeNode>
-                            <asp:TreeNode Value="Exp1" NavigateUrl="~/ex1Form.aspx" Text="Experiment 3: Sending Input from Arduino to Web Application" Target="Content">
+                            <asp:TreeNode Value="Exp3" Text="Experiment 3: Sending Input from Arduino to Web Application" Target="Content">
                                 <asp:TreeNode Value="Def1" Text="Experiment 3 is yadayada yada yada" Target="Content"></asp:TreeNode>
                             </asp:TreeNode>
-                            <asp:TreeNode Value="Exp1" NavigateUrl="~/ex1Form.aspx" Text="Experiment 4: Rock, Paper, Scissors Game" Target="Content">
-                                <asp:TreeNode Value="Def1" Text="The fourth experiment is the integration of all the experiences <br />
+                            <asp:TreeNode Value="Exp4" Text="Experiment 4: Rock, Paper, Scissors Game" Target="Content">
+                                <asp:TreeNode Value="Def4" Text="The fourth experiment is the integration of all the experiences <br />
                                     and learning of the previous experiments in the form of the Rock, <br /> Paper, Scissors Game. 
                                     With this application, the student is set <br /> to understand how to interface the Arduino and its control <br /> 
                                     features to the web application." Target="Content"></asp:TreeNode>
