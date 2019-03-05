@@ -22,7 +22,12 @@
                 <asp:Label ID="Intensity_label" runat="server" Font-Names="Century Gothic" Font-Overline="False" Font-Size="Large" Text="Intensity (% PWM)" Font-Bold="True" ForeColor="#666666"></asp:Label>
                 <asp:TextBox ID="Intensity_TB" runat="server" BackColor="#003300" BorderColor="#FFCC99" OnTextChanged="TextBox1_TextChanged" Width="147px" ForeColor="White">0</asp:TextBox>
                 <br />
-                <asp:Button ID="EnterIntensity_Btn" runat="server" OnClick="EnterIntensity_Btn_Click" Text="Enter" BackColor="#333333" BorderColor="#CCCCCC" Font-Names="Century" ForeColor="#CCCCCC" Width="71px" />
+                <asp:Button ID="EnterIntensity_Btn" runat="server" OnClick="EnterIntensity_Btn_Click" Text="Enter" BackColor="#333333" BorderColor="#CCCCCC" Font-Names="Century" ForeColor="#CCCCCC" Width="71px" Font-Size="Small" />
             </asp:Panel>
+    <p>
+        <br /> <br />
+        <asp:Button ID="Button1" runat="server" BackColor="#333333" BorderColor="#CCCCCC" Font-Names="Century" Font-Size="Small" ForeColor="#CCCCCC" Text="Back" Width="70px" OnClick="Button1_Click" />
+
+    </p>
     </form>
 </asp:Content>
