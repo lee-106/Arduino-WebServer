@@ -23,7 +23,7 @@
         </p>
         <p>
 
-            <asp:Button ID="Button1" runat="server" BackColor="#333333" BorderColor="#CCCCCC" ForeColor="#CCCCCC" Text="Proceed" />
+            <asp:Button ID="Button1" runat="server" BackColor="#333333" BorderColor="#CCCCCC" ForeColor="#CCCCCC" OnClick="Button1_Click" Text="Proceed" />
             <asp:Button ID="Button2" runat="server" BackColor="#333333" BorderColor="#CCCCCC" ForeColor="#CCCCCC" OnClick="Button2_Click" Text="Back" Width="55px" />
 
         </p>

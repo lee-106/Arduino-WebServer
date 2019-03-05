@@ -15,6 +15,7 @@ namespace WebApplication
     {
         private String fromMain;
         private int int_no;
+        private String redirect;
 
         SqlConnection conn;
         protected void Page_Load(object sender, EventArgs e)
@@ -32,20 +33,23 @@ namespace WebApplication
             
             if(fromMain.Equals("Experiment 1: Familiarization with Arduino"))
             {
-                Console.WriteLine("pumasok");
                 int_no = 1;
+                redirect = "ex1Interface.aspx";
             }
             else if(fromMain.Equals("Experiment 2: Interfacing Arduino with Web Application"))
             {
                 int_no = 2;
+                redirect = "ex2Interface.aspx";
             }
             else if(fromMain.Equals("Experiment 3: Sending Input from Arduino to Web Application"))
             {
                 int_no = 3;
+                redirect = "ex3Interface.aspx";
             }
             else if(fromMain.Equals("Experiment 4: Rock, Paper, Scissors Game"))
             {
                 int_no = 4;
+                redirect = "ex4Interface.aspx";
             }
 
             exp_number.Text = fromMain;
@@ -104,6 +108,11 @@ namespace WebApplication
         protected void Button2_Click(object sender, EventArgs e)
         {
             Response.Redirect("WebForm1.aspx");
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(redirect);
         }
     }
 }
