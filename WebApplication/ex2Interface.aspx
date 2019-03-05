@@ -29,7 +29,7 @@
             <p>
                 <asp:Label ID="update_Lbl" runat="server"></asp:Label>
             </p>
-            <asp:Panel ID="Panel1" runat="server" Width="243px" Panel.DefaultButton="EnterIntensity_Btn">
+            <asp:Panel ID="Panel1" runat="server" Width="243px">
                 <asp:Label ID="Intensity_label" runat="server" Font-Names="Aharoni" Font-Overline="False" Font-Size="X-Large" Text="Intensity (% PWM)"></asp:Label>
                 <asp:TextBox ID="Intensity_TB" runat="server" BackColor="#F8F8F8" BorderColor="#CCCCCC" OnTextChanged="TextBox1_TextChanged">0</asp:TextBox>
                 <br />
