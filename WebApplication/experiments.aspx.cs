@@ -34,22 +34,22 @@ namespace WebApplication
             if(fromMain.Equals("Experiment 1: Familiarization with Arduino"))
             {
                 int_no = 1;
-                redirect = "ex1Interface.aspx";
+                redirect = "Interface1.aspx";
             }
             else if(fromMain.Equals("Experiment 2: Interfacing Arduino with Web Application"))
             {
                 int_no = 2;
-                redirect = "ex2Interface.aspx";
+                redirect = "Interface2.aspx";
             }
             else if(fromMain.Equals("Experiment 3: Sending Input from Arduino to Web Application"))
             {
                 int_no = 3;
-                redirect = "ex3Interface.aspx";
+                redirect = "Interface3.aspx";
             }
             else if(fromMain.Equals("Experiment 4: Rock, Paper, Scissors Game"))
             {
                 int_no = 4;
-                redirect = "ex4Interface.aspx";
+                redirect = "Interface4.aspx";
             }
 
             exp_number.Text = fromMain;

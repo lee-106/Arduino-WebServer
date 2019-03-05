@@ -152,6 +152,10 @@
     <Content Include="images\img10.gif" />
     <Content Include="images\screenshot.gif" />
     <Content Include="images\screenshot.jpg" />
+    <Content Include="Interface1.aspx" />
+    <Content Include="Interface2.aspx" />
+    <Content Include="Interface3.aspx" />
+    <Content Include="Interface4.aspx" />
     <Content Include="style.css" />
     <Content Include="update.txt" />
     <Content Include="WebForm1.aspx" />
@@ -284,6 +288,34 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Interface1.aspx.cs">
+      <DependentUpon>Interface1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface1.aspx.designer.cs">
+      <DependentUpon>Interface1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface2.aspx.cs">
+      <DependentUpon>Interface2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface2.aspx.designer.cs">
+      <DependentUpon>Interface2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface3.aspx.cs">
+      <DependentUpon>Interface3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface3.aspx.designer.cs">
+      <DependentUpon>Interface3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interface4.aspx.cs">
+      <DependentUpon>Interface4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface4.aspx.designer.cs">
+      <DependentUpon>Interface4.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
