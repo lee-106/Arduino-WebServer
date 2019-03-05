@@ -60,6 +60,8 @@
             <asp:Button ID="Button1" runat="server" Text="Add" OnClick="Button1_Click" BackColor="#333333" BorderColor="#CCCCCC" Font-Size="Small" ForeColor="#CCCCCC" Width="75px" />
             <asp:Button ID="Button2" runat="server" Text="Edit" OnClick="Button2_Click" BackColor="#333333" BorderColor="#CCCCCC" ForeColor="#CCCCCC" Width="75px" />
 
+            <asp:Button ID="Button3" runat="server" BackColor="#333333" BorderColor="#CCCCCC" ForeColor="#CCCCCC" OnClick="Button3_Click1" Text="Back" Width="52px" />
+
             </p>
         <p>
             &nbsp;</p>

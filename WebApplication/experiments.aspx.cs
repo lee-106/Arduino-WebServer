@@ -81,5 +81,29 @@ namespace WebApplication
                 conn.Close();
             }
         }
+
+        protected void obj_gv_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if(e.Row.RowType == DataControlRowType.Header)
+            {
+                e.Row.Cells[0].Text = "Objectives:";
+            }
+        }
+
+        protected void proc_gv_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if(e.Row.RowType == DataControlRowType.Header)
+            {
+                e.Row.Cells[0].Text = "Procedures: ";
+                e.Row.Cells[1].Text = "";
+                e.Row.Cells[0].Attributes["Width"] = "1px";
+                //e.Row.Cells[1].Attributes["Width"] = "100px";
+            }
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("WebForm1.aspx");
+        }
     }
 }

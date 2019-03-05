@@ -84,5 +84,15 @@ namespace WebApplication
         {
 
         }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        protected void Button3_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("WebForm1.aspx");
+        }
     }
 }

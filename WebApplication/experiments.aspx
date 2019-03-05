@@ -3,18 +3,28 @@
     <form id="form1" runat="server">
     <p>
 
-        <asp:Label ID="exp_number" runat="server" Font-Bold="True" Font-Italic="True" Font-Names="Times New Roman" Font-Size="X-Large" Text="Experiment: "></asp:Label>
+        <asp:Label ID="exp_number" runat="server" Font-Bold="True" Font-Italic="True" Font-Names="Times New Roman" Font-Size="X-Large" Text="Experiment: " ForeColor="#CCFFFF"></asp:Label>
     </p>
         <p>
 
-            <asp:GridView ID="obj_gv" runat="server" GridLines="None">
+            <asp:GridView ID="obj_gv" runat="server" GridLines="None" OnRowDataBound="obj_gv_RowDataBound" Width="600px">
+                <HeaderStyle ForeColor="#CCFF99" />
+                <RowStyle ForeColor="#FFCC99" />
             </asp:GridView>
 
         </p>
         <p>
 
-            <asp:GridView ID="proc_gv" runat="server" GridLines="None">
+            <asp:GridView ID="proc_gv" runat="server" GridLines="None" Width="600px" OnRowDataBound="proc_gv_RowDataBound">
+                <HeaderStyle ForeColor="#999966" />
+                <RowStyle ForeColor="#FFFFCC" />
             </asp:GridView>
+
+        </p>
+        <p>
+
+            <asp:Button ID="Button1" runat="server" BackColor="#333333" BorderColor="#CCCCCC" ForeColor="#CCCCCC" Text="Proceed" />
+            <asp:Button ID="Button2" runat="server" BackColor="#333333" BorderColor="#CCCCCC" ForeColor="#CCCCCC" OnClick="Button2_Click" Text="Back" Width="55px" />
 
         </p>
     </form>
