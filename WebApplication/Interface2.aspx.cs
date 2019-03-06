@@ -14,13 +14,9 @@ namespace WebApplication
         String pass;
         protected void Page_Load(object sender, EventArgs e)
         {
-        }
-
-        protected void Connect_Btn_Click(object sender, EventArgs e)
-        {
-
             if (Page.IsPostBack)
             {
+                this.Form.Target = "_self";
                 duino = new SerialPort();
                 if (Port_TB.Text.ToLower().Contains("com") && !Port_TB.Text.Equals(null))
                 {
@@ -32,6 +28,16 @@ namespace WebApplication
                     update_Lbl.Text = "Please fill in the textbox above with the proper port name (i.e. COM1)";
                 }
             }
+            else
+            {
+                update_Lbl.Text = "Please fill in the textbox above with the proper port name (i.e. COM1)";
+            }
+        }
+
+        protected void Connect_Btn_Click(object sender, EventArgs e)
+        {
+
+            
         }
 
         protected void Port_TB_TextChanged(object sender, EventArgs e)
