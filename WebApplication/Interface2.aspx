@@ -4,13 +4,24 @@
     <p>
 
         <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Italic="True" Font-Names="Century Gothic" Font-Size="X-Large" Text="Arduino Intensity Controller" ForeColor="#999966"></asp:Label>
-        <br /><br />
+        <br />
+    </p>
+
+        <p>
+            <br />
         <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Italic="True" Text="Connect to Arduino: " Font-Size="Large" ForeColor="#666633" Font-Names="Century Gothic"></asp:Label>
         <br />
-        <asp:Label ID="Label3" runat="server" Text="Port: " Font-Names="Castellar" Font-Size="Medium" ForeColor="#CCCCCC"></asp:Label>
-        <asp:TextBox ID="Port_TB" runat="server" BackColor="#003300" BorderColor="#FFCC99" Font-Names="Castellar" ForeColor="White" Width="162px"></asp:TextBox>
+    </p>
+
+        <asp:Panel ID="Panel2" runat="server" DefaultButton="Connect_Btn">
+            <asp:Label ID="Label3" runat="server" Font-Names="Castellar" Font-Size="Medium" ForeColor="#CCCCCC" Text="Port: "></asp:Label>
+            <br />
+            <asp:TextBox ID="Port_TB" runat="server" BackColor="#003300" BorderColor="#FFCC99" Font-Names="Castellar" ForeColor="White" Width="162px"></asp:TextBox>
+            <br />
+            <asp:Button ID="Connect_Btn" runat="server" OnClick="Connect_Btn_Click" Text="Connect" BackColor="#333333" BorderColor="#CCCCCC" Font-Names="Century" Font-Size="Small" ForeColor="#CCCCCC" />
+        </asp:Panel>
+        <p>
         <br />
-        <asp:Button ID="Connect_Btn" runat="server" OnClick="Connect_Btn_Click" Text="Connect" BackColor="#333333" BorderColor="#CCCCCC" Font-Names="Century" Font-Size="Small" ForeColor="#CCCCCC" />
     </p>
 
     <p>
@@ -18,7 +29,7 @@
         <br />
     </p>
     
-    <asp:Panel ID="Panel1" runat="server" Width="243px">
+    <asp:Panel ID="Panel1" runat="server" Width="243px" DefaultButton ="EnterIntensity_Btn">
                 <asp:Label ID="Intensity_label" runat="server" Font-Names="Century Gothic" Font-Overline="False" Font-Size="Large" Text="Intensity (% PWM)" Font-Bold="True" ForeColor="#666666"></asp:Label>
                 <asp:TextBox ID="Intensity_TB" runat="server" BackColor="#003300" BorderColor="#FFCC99" OnTextChanged="TextBox1_TextChanged" Width="147px" ForeColor="White">0</asp:TextBox>
                 <br />

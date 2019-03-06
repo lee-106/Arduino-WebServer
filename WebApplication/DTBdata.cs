@@ -16,7 +16,7 @@ namespace WebApplication
         }
         public String returnServer()
         {
-            return "LYLE-PC";
+            return "CHRISKITS\\SQLEXPRESS";
         }
 
         public void UpdateTable()
