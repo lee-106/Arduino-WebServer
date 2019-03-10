@@ -27,7 +27,7 @@
 
                         </asp:TreeNode>
                     </Nodes>
-                    <NodeStyle Font-Italic="True" Font-Names="Courier New" Font-Size="Small" ForeColor="#66FFCC" />
+                    <NodeStyle Font-Italic="True" Font-Names="Consolas" Font-Size="Small" ForeColor="#66FFCC" />
                     <ParentNodeStyle Font-Italic="True" />
                     <RootNodeStyle Font-Bold="True" Font-Names="Century Gothic" Font-Size="Medium" ForeColor="#009933" Height="20px" />
                 </asp:TreeView>
