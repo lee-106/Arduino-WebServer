@@ -8,6 +8,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Web.Services;
+using System.IO;
+using System.Text.RegularExpressions;
 
 namespace WebApplication
 {
@@ -68,13 +70,8 @@ namespace WebApplication
                 dataAdapter.Fill(dataTable);
                 obj_gv.DataSource = dataTable;
                 obj_gv.DataBind();
-                SqlDataAdapter dataAdapter2 = new SqlDataAdapter("SELECT in_number, instructions FROM [proctable] WHERE number = '" + int_no + "';", conn);
-                DataTable dataTable2 = new DataTable();
-                dataAdapter2.Fill(dataTable2);
-                proc_gv.DataSource = dataTable2;
-                proc_gv.DataBind();
-                dataTable.Clear();
-                dataTable2.Clear();
+                manualBind();
+                showPics(); 
             }
             catch(SqlException)
             {
@@ -113,6 +110,119 @@ namespace WebApplication
         protected void Button1_Click(object sender, EventArgs e)
         {
             Response.Redirect(redirect);
+        }
+
+        protected void manualBind()
+        {
+            SqlCommand command = new SqlCommand("SELECT * FROM [proctable] WHERE number = '" + int_no + "';", conn);
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("No.");
+            dataTable.Columns.Add("Procedures");
+            SqlDataReader reader = command.ExecuteReader();
+            while(reader.Read())
+            {
+                String procedure = reader[0].ToString();
+                String link = reader[6].ToString();
+                String filename = reader[8].ToString();
+                String image = reader[4].ToString();
+                String HasImage = reader[3].ToString();
+                String HasLink = reader[5].ToString();
+                String HasCode = reader[7].ToString();
+                if(HasCode.Equals("1") && HasImage.Equals("1") && HasLink.Equals("1"))
+                {
+                    String data = File.ReadAllText(Server.MapPath("~/" + filename));
+                    String append = procedure + "\n" + link + "\n" + image + Environment.NewLine + data;
+                    var datarow = dataTable.NewRow();
+                    datarow["No."] = reader[1].ToString();
+                    datarow["Procedures"] = append;
+                    dataTable.Rows.Add(datarow);
+                }
+                else if(HasImage.Equals("1") && HasLink.Equals("1"))
+                {
+                    String append = procedure + "\n" + link + "\n" + image;
+                    var datarow = dataTable.NewRow();
+                    datarow["No."] = reader[1].ToString();
+                    datarow["Procedures"] = append;
+                    dataTable.Rows.Add(datarow);
+                }
+                else if(HasImage.Equals("1") && HasCode.Equals("1"))
+                {
+                    String data = File.ReadAllText(Server.MapPath("~/" + filename));
+                    String append = procedure + "\n" + image + Environment.NewLine + data;
+                    var datarow = dataTable.NewRow();
+                    datarow["No."] = reader[1].ToString();
+                    datarow["Procedures"] = append;
+                    dataTable.Rows.Add(datarow);
+                }
+                else if(HasLink.Equals("1") && HasCode.Equals("1"))
+                {
+                    String data = File.ReadAllText(Server.MapPath("~/" + filename));
+                    String append = procedure + "\n" + link + Environment.NewLine + data;
+                    var datarow = dataTable.NewRow();
+                    datarow["No."] = reader[1].ToString();
+                    datarow["Procedures"] = append;
+                    dataTable.Rows.Add(datarow);
+                }
+                else if(HasImage.Equals("1"))
+                {
+                    String append = procedure + "\n" + image;
+                    var datarow = dataTable.NewRow();
+                    datarow["No."] = reader[1].ToString();
+                    datarow["Procedures"] = append;
+                    dataTable.Rows.Add(datarow);
+                }
+                else if (HasLink.Equals("1"))
+                {
+                    HyperLinkField hyp = new HyperLinkField();
+                    hyp.NavigateUrl = link;
+                    String append = procedure + "\n" + hyp.NavigateUrl;
+                    var datarow = dataTable.NewRow();
+                    datarow["No."] = reader[1].ToString();
+                    datarow["Procedures"] = append;
+                    dataTable.Rows.Add(datarow);
+                }
+                else if(HasCode.Equals("1"))
+                {
+                    //String script = File.ReadAllText(Path.Combine(Environment.CurrentDirectory, filename));
+                    String data = File.ReadAllText(Server.MapPath("~/" + filename));
+                    String append = procedure + Environment.NewLine + data;
+                    var datarow = dataTable.NewRow();
+                    datarow["No."] = reader[1].ToString();
+                    datarow["Procedures"] = append;
+                    dataTable.Rows.Add(datarow);
+                }
+                else
+                {
+                    var datarow = dataTable.NewRow();
+                    datarow["No."] = reader[1].ToString();
+                    datarow["Procedures"] = reader[0].ToString();
+                    dataTable.Rows.Add(datarow);
+                }
+            }
+            proc_gv.DataSource = dataTable;
+            proc_gv.DataBind();
+        }
+
+        protected void showPics()
+        {
+            if(int_no == 1)
+            {
+                exp1_image.Visible = true;
+                exp1_image.Width = 380;
+                exp1_image.Height = 480;
+            }
+            else if(int_no == 2)
+            {
+                exp2_image.Visible = true;
+                exp2_image.Width = 400;
+                exp2_image.Height = 420;
+            }
+            else if(int_no == 3)
+            {
+                exp3_image.Visible = true;
+                exp3_image.Width = 600;
+                exp3_image.Height = 300;
+            }
         }
     }
 }

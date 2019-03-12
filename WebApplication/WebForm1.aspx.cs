@@ -14,7 +14,9 @@ namespace WebApplication
         protected void Page_Load(object sender, EventArgs e)
         {
             DTBdata fetch = new DTBdata();
+            DTBImages images = new DTBImages();
             fetch.UpdateTable();
+            images.insertImages();
         }
 
         protected void adminpage_btn_Click(object sender, EventArgs e)

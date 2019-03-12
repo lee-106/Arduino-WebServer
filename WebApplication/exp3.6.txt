@@ -1,0 +1,10 @@
+void loop() {
+int chk = DHT.read11(DHT11_PIN);
+temp = DHT.temperature;
+humidity = DHT.humidity;
+if (Serial.available() > 0){
+Serial.println("T"+String(temp,2));
+Serial.println("H"+String(humidity,2));
+}
+delay(1000);
+}

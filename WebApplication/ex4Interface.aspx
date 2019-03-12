@@ -19,11 +19,35 @@
             <br />
         </div>
         <div style="width: 752px; margin-left: 120px">
+            <div style="width: 752px; margin-left: 120px; height: 351px;">
+            <h1>Arduino Intensity Controller</h1>
+            <h2>Connect to Arduino</h2>
+            <p>
+                Port1:<asp:TextBox ID="Port_TB1" runat="server" OnTextChanged="Port_TB_TextChanged"></asp:TextBox>
+                Port2:<asp:TextBox ID="Port_TB2" runat="server" OnTextChanged="Port_TB_TextChanged"></asp:TextBox>
+            </p>
+            <p>
+                <asp:Button ID="Connect_Btn" runat="server" OnClick="Connect_Btn_Click" Text="Connect" />
+            </p>
+            <p>
+                <asp:Label ID="update_Lbl" runat="server"></asp:Label>
+            </p>
+            &nbsp;<br />
+        </div>
             <asp:Panel ID="Panel1" runat="server" Width="240px">
                 <asp:Label ID="player1_label" runat="server" Font-Names="Aharoni" Font-Overline="False" Font-Size="X-Large" Text="Player 1"></asp:Label>
+                <br>
+                <br></br>
+                <asp:Label ID="tryLabel" runat="server" Font-Names="Aharoni" Font-Overline="False" Font-Size="X-Large" Text="Choice"></asp:Label>
+                <br>
+                <br></br>
+                <asp:Button ID="tyrButton" runat="server" OnClick="tyrButton_Click" OnClientClick="tryBtn_Clicked" Text="Load from UART" />
+                </br>
+                </br>
             </asp:Panel>
             <asp:Image ID="Image1" runat="server" Height="147px" Width="155px" />
-            &nbsp;&nbsp;&nbsp;&nbsp;<asp:RadioButtonList ID="p1_choices" runat="server">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:RadioButtonList ID="p1_choices" runat="server">
                 <asp:ListItem>Rock</asp:ListItem>
                 <asp:ListItem>Paper</asp:ListItem>
                 <asp:ListItem>Scissors</asp:ListItem>

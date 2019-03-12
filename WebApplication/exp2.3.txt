@@ -1,0 +1,36 @@
+byte brightness = 0;
+int LED = 9;
+int lum = 0;
+void setup() {
+  Serial.begin(9600);
+  Serial.println("You have been connected to the computer.");
+  pinMode(LED, OUTPUT);
+}
+
+void loop() {
+  Serial.println("enter brightness %");
+  while(Serial.available()==0)
+  {
+  }
+  while(Serial.available()>0)
+  {
+    char ch = Serial.read(); //read input from UART
+    if(ch >= '0' && ch <='255')
+    {
+    brightness = brightness*10 + ch - '0';
+    delay(5);
+    }
+    else
+    {
+    Serial.print(ch);
+    Serial.println(":not valid");
+    brightness = 0;
+    }
+  }
+  brightness = constrain(brightness,0,100);
+  Serial.print("brightness = ");
+  Serial.println(brightness);
+  byte value = map(brightness,0,100,0,255);
+  analogWrite(LED,value); //output PWM percent
+  brightness = 0;
+}

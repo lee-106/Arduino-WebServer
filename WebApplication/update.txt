@@ -19,19 +19,29 @@ CREATE TABLE [dbo].[objTable](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[proctable]    Script Date: 2/25/2019 3:15:18 PM ******/
+/****** Object:  Table [dbo].[proctable]    Script Date: 3/11/2019 12:31:35 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [dbo].[proctable](
 	[instructions] [nvarchar](max) NOT NULL,
 	[in_number] [int] NOT NULL,
-	[number] [int] NOT NULL
+	[number] [int] NOT NULL,
+	[HasImage] [int] NOT NULL,
+	[procedure_image] [nvarchar](max) NULL,
+	[HasLink] [int] NOT NULL,
+	[procedure_link] [nvarchar](max) NULL,
+	[HasCode] [int] NOT NULL,
+	[procedure_code] [nvarchar](max) NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[titleTable]    Script Date: 2/25/2019 3:15:18 PM ******/
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[titleTable]    Script Date: 3/11/2019 12:31:35 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -46,74 +56,42 @@ CREATE TABLE [dbo].[titleTable](
 ) ON [PRIMARY]
 
 GO
-INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To familiarize with the basics of Arduinno', 1)
-GO
-INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To interface Arduino with input and output pins ', 1)
-GO
-INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To interface with the Arduino and the Wifi Shield', 2)
-GO
-INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To test the connectivity by turning a LED on and off through the system', 2)
-GO
-INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To interface the PWM control the Arduino', 2)
-GO
-INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To control the light intensity using a control interface in the Web App', 2)
-GO
-INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To process information from Arduino to Web App
-', 3)
-GO
-INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To display the detected humidity and temperature from DHT11 Sensor
-', 3)
-GO
-INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To be able to save the displayed data using button input
-', 3)
-GO
-INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'Create a hardware interface (button, for rock, paper, and scissors)
-', 4)
-GO
-INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'Create the game rules (to be done by the user)
-', 4)
-GO
-INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'Connect 2 arduinos via UART
-', 4)
-GO
-INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'Display the score of both sides in the Web App
-', 4)
-GO
-INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'Displays what the user inputs are on Web App
-', 4)
-GO
-INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'Optional: 7-Segment Display
-', 4)
-GO
-INSERT [dbo].[proctable] ([instructions], [in_number], [number]) VALUES (N'Procedure1', 1, 1)
-GO
-INSERT [dbo].[proctable] ([instructions], [in_number], [number]) VALUES (N'Procedure2', 2, 1)
-GO
-INSERT [dbo].[proctable] ([instructions], [in_number], [number]) VALUES (N'Procedure3', 3, 1)
-GO
-INSERT [dbo].[proctable] ([instructions], [in_number], [number]) VALUES (N'Procedure1', 1, 2)
-GO
-INSERT [dbo].[proctable] ([instructions], [in_number], [number]) VALUES (N'Procedure2', 2, 2)
-GO
-INSERT [dbo].[proctable] ([instructions], [in_number], [number]) VALUES (N'Procedure3', 3, 2)
-GO
-INSERT [dbo].[proctable] ([instructions], [in_number], [number]) VALUES (N'Procedure1', 1, 3)
-GO
-INSERT [dbo].[proctable] ([instructions], [in_number], [number]) VALUES (N'Procedure2', 2, 3)
-GO
-INSERT [dbo].[proctable] ([instructions], [in_number], [number]) VALUES (N'Procedure3', 3, 3)
-GO
-INSERT [dbo].[proctable] ([instructions], [in_number], [number]) VALUES (N'Procedure1', 1, 4)
-GO
-INSERT [dbo].[proctable] ([instructions], [in_number], [number]) VALUES (N'Procedure2', 2, 4)
-GO
-INSERT [dbo].[proctable] ([instructions], [in_number], [number]) VALUES (N'Procedure3', 3, 4)
-GO
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To familiarize the student how the Arduino works and its functionality.', 1)
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To develop a simple Arduino program to control an I/O pin to light an LED circuit.', 1)
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To familiarize with the Arduino IDE to code the functionality of the Arduino', 1)
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To connect Arduino with the web application.', 2)
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To use the web application for inputting percent PWM.', 2)
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To make the Arduino output the inputted PWM measurement to be seen through light intensity of an LED.', 2)
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To process information from Arduino to web application.', 3)
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To display the detected humidity and temperature from DHT11 Sensor', 3)
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To be able to save the displayed data using button input.', 3)
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To create a hardware interface button for rock, paper, and scissors.', 4)
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To connect the two Arduinos via UART', 4)
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To display the score of both sides in the web application', 4)
+INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To display what the user inputs from the Arduino to the web applcation.', 4)
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Connect the serial port from the computer to the Arduino, and download the Arduino IDE at ', 1, 1, 0, NULL, 1, N'https://www.arduino.cc/en/Main/Software', 0, NULL)
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Build the LED circuit connecting to the Arduino as shown in the figure.', 2, 1, 1, NULL, 0, NULL, 0, NULL)
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'In the Arduino IDE, the following code is to be written and compiled into the Arduino.', 3, 1, 0, NULL, 0, NULL, 1, N'exp1.3.txt')
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Identify the functionality of the Arduino circuit.', 4, 1, 0, NULL, 0, NULL, 0, NULL)
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'From the current circuit, implement a PWM functionality in order to change the light intensity using the function analogWrite(value). The value should range from 0 to 255. ', 5, 1, 0, NULL, 0, NULL, 0, NULL)
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Change the pin where the LED is connected to a pin with a PWM functionality from the code below. \n', 6, 1, 0, NULL, 0, NULL, 1, N'exp1.6.txt')
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Assemble circuit as shown below.', 1, 2, 1, N'exp2.png', 0, NULL, 0, NULL)
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Connect Arduino to PC using the USB cable.', 2, 2, 0, NULL, 0, NULL, 0, NULL)
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Upload the code given below to the Arduino. \n', 3, 2, 0, NULL, 0, NULL, 1, N'exp2.3.txt')
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Note the COM port that the Arduino is connected in to the PC being used. This can be done by going to Device Manager under COM ports.', 4, 2, 0, NULL, 0, NULL, 0, NULL)
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Input the COM port number into the field.', 5, 2, 0, NULL, 0, NULL, 0, NULL)
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Navigate to Experiment 2 Interface tab by clicking the ''Proceed'' button.', 6, 2, 0, NULL, 0, NULL, 0, NULL)
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Test connection by setting the intensity to 100. This must turn the LED on.', 7, 2, 0, NULL, 0, NULL, 0, NULL)
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Once connected, vary the light intensity by assigning different percentages (0%-100%) of PWM when the LED is on.', 8, 2, 0, NULL, 0, NULL, 0, NULL)
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'For the hardware setup, connect the DHT11 to the Arduino with the following step. (+)->5V pin, (-)->GND, (OUT)->Pin 7. ', 1, 3, 1, N'exp3.jpg', 0, NULL, 0, NULL)
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Connect a toggle button between pin 6 and GND pins of the Arduino.', 2, 3, 0, NULL, 0, NULL, 0, NULL)
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Install the library DHTLib from the link below to Arduino sketch. ', 3, 3, 0, NULL, 1, N'http://www.circuitbasics.com/wp_control/uploads/2015/10/DHTLib.zip', 0, NULL)
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'For the Arduino code, add the following at the start of the program to initialize the DHT11 pin and save button pin in Arduino. \n', 4, 3, 0, NULL, 0, NULL, 1, N'exp3.4.txt')
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Add in setup() to initialize serial communications. \n', 5, 3, 0, NULL, 0, NULL, 1, N'exp3.5.txt')
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Add in loop() to get data output of DHT11 every second and send it to the PC.', 6, 3, 0, NULL, 0, NULL, 1, N'exp3.6.txt')
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Compile and upload to the Arduino.', 7, 3, 0, NULL, 0, NULL, 0, NULL)
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Click the ''Proceed'' button to enter the next web interface.', 8, 3, 0, NULL, 0, NULL, 0, NULL)
 INSERT [dbo].[titleTable] ([Number], [Title]) VALUES (1, N'Familiarization with Arduino')
-GO
 INSERT [dbo].[titleTable] ([Number], [Title]) VALUES (2, N'Interfacing Arduino with Web App')
-GO
 INSERT [dbo].[titleTable] ([Number], [Title]) VALUES (3, N'Sending Input from Arduino to Web App')
-GO
-INSERT [dbo].[titleTable] ([Number], [Title]) VALUES (4, N'Rock,Paper,Scissors Game')
-GO
+INSERT [dbo].[titleTable] ([Number], [Title]) VALUES (4, N'Rock, Paper, and Scissors Game')
