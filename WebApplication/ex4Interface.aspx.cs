@@ -17,11 +17,14 @@ namespace WebApplication
 
         SerialPort ArduinoPort1,ArduinoPort2;
 
-      
+        
 
         protected void Page_Load(object sender, EventArgs asd)
         {
-           
+            Image1.ImageUrl = "~/Rock.PNG";
+            Image2.ImageUrl = "~/Rock.PNG";
+            Panel1.Style.Add("display", "inline-block");
+            Panel2.Style.Add("display", "inline-block");
             if (Page.IsPostBack)
             {
 
@@ -32,7 +35,7 @@ namespace WebApplication
                     ArduinoPort1.PortName = Port_TB1.Text;
                     
                     ArduinoPort2.PortName = Port_TB2.Text;
-                    update_Lbl.Text = "Connection Established: " + ArduinoPort1.PortName + "," + ArduinoPort1.BaudRate +"\n\r"
+                    update_Lbl.Text = "Connection Established: " + ArduinoPort1.PortName + "," + ArduinoPort1.BaudRate + Environment.NewLine
                         + "Connection Established: " + ArduinoPort2.PortName + "," + ArduinoPort2.BaudRate;
 
                 }
@@ -54,7 +57,7 @@ namespace WebApplication
         protected void tyrButton_Click(object sender, EventArgs e)
         {
             ArduinoPort1.Open();
-            tryLabel.Text = ArduinoPort1.ReadLine();
+            String text = ArduinoPort1.ReadLine();
             ArduinoPort1.Close();
 
         }
@@ -66,9 +69,27 @@ namespace WebApplication
         {
 
         }
-        protected void Evaluate()
+        protected void Evaluate(object sender, EventArgs e)
         {
-
+            Image1.ImageUrl = "~/Paper.PNG";
+            
+            ArduinoPort1.Open();
+            String temp1 = ArduinoPort1.ReadLine();
+            choice1.Text = temp1;
+            ArduinoPort1.Close();
+            if (temp1 == "R")
+            {
+                Image1.ImageUrl = "~/Rock.PNG";
+                ViewState["selection1"] = "R";
+            }
+            else if(temp1 == "P"){
+                Image1.ImageUrl = "~/Paper.PNG";
+            }
+            else
+            {
+                Image1.ImageUrl = "~/Scissors.PNG";
+            }
+            
         }
     }
 }
