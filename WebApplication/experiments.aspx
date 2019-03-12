@@ -32,6 +32,14 @@
         </p>
         <p>
 
+            <asp:GridView ID="mat_gv" runat="server" Width="600px" OnRowDataBound="mat_gv_RowDataBound" GridLines="None">
+                <HeaderStyle ForeColor="#999966" />
+                <RowStyle ForeColor="#FFFFCC" />
+            </asp:GridView>
+
+        </p>
+        <p>
+
             <asp:Button ID="Button1" runat="server" BackColor="#333333" BorderColor="#CCCCCC" ForeColor="#CCCCCC" OnClick="Button1_Click" Text="Proceed" />
             <asp:Button ID="Button2" runat="server" BackColor="#333333" BorderColor="#CCCCCC" ForeColor="#CCCCCC" OnClick="Button2_Click" Text="Back" Width="55px" />
 

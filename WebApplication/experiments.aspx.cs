@@ -36,6 +36,7 @@ namespace WebApplication
             if(fromMain.Equals("Experiment 1: Familiarization with Arduino"))
             {
                 int_no = 1;
+                Button1.Visible = false;
                 redirect = "Interface1.aspx";
             }
             else if(fromMain.Equals("Experiment 2: Interfacing Arduino with Web Application"))
@@ -66,10 +67,15 @@ namespace WebApplication
             {
                 conn.Open();
                 SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT objective FROM [objTable] WHERE number ='" + int_no + "';", conn);
+                SqlDataAdapter dataAdapter2 = new SqlDataAdapter("SELECT amount, material_name FROM [matTable] WHERE exp_number ='" + int_no + "';", conn);
                 DataTable dataTable = new DataTable();
+                DataTable dataTable2 = new DataTable();
                 dataAdapter.Fill(dataTable);
+                dataAdapter2.Fill(dataTable2);
                 obj_gv.DataSource = dataTable;
                 obj_gv.DataBind();
+                mat_gv.DataSource = dataTable2;
+                mat_gv.DataBind();
                 manualBind();
                 showPics(); 
             }
@@ -80,6 +86,15 @@ namespace WebApplication
             finally
             {
                 conn.Close();
+            }
+        }
+        protected void mat_gv_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                e.Row.Cells[0].Text = "Materials:";
+                e.Row.Cells[1].Text = "";
+                e.Row.Cells[0].Attributes["Width"] = "1px";
             }
         }
 
@@ -183,7 +198,6 @@ namespace WebApplication
                 }
                 else if(HasCode.Equals("1"))
                 {
-                    //String script = File.ReadAllText(Path.Combine(Environment.CurrentDirectory, filename));
                     String data = File.ReadAllText(Server.MapPath("~/" + filename));
                     String append = procedure + Environment.NewLine + data;
                     var datarow = dataTable.NewRow();
