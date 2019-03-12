@@ -22,7 +22,7 @@
             <asp:Panel ID="Panel1" runat="server" Width="240px">
                 <asp:Label ID="player1_label" runat="server" Font-Names="Aharoni" Font-Overline="False" Font-Size="X-Large" Text="Player 1"></asp:Label>
             </asp:Panel>
-            <asp:Image ID="Image1" runat="server" Height="147px" Width="155px" />
+            <asp:Image ID="Image1" runat="server" Height="147px" Width="155px" ImageUrl="~/Paper.PNG" />
             &nbsp;&nbsp;&nbsp;&nbsp;<asp:RadioButtonList ID="p1_choices" runat="server">
                 <asp:ListItem>Rock</asp:ListItem>
                 <asp:ListItem>Paper</asp:ListItem>
@@ -31,7 +31,7 @@
             <asp:Panel ID="Panel2" runat="server">
                 <asp:Label ID="player2_label" runat="server" Font-Names="Aharoni" Font-Overline="False" Font-Size="X-Large" Text="Player 2"></asp:Label>
                 <br />
-                <asp:Image ID="p2_choice_sel" runat="server" Height="147px" Width="155px" />
+                <asp:Image ID="p2_choice_sel" runat="server" Height="147px" Width="155px" ImageUrl="~/Rock.PNG" />
                 <br />
                 <asp:RadioButtonList ID="p1_choices0" runat="server">
                     <asp:ListItem>Rock</asp:ListItem>
