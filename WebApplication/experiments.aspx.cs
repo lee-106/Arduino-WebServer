@@ -71,13 +71,7 @@ namespace WebApplication
                 obj_gv.DataSource = dataTable;
                 obj_gv.DataBind();
                 manualBind();
-                //SqlDataAdapter dataAdapter2 = new SqlDataAdapter("SELECT in_number, instructions FROM [proctable] WHERE number = '" + int_no + "';", conn);
-                //DataTable dataTable2 = new DataTable();
-                //dataAdapter2.Fill(dataTable2);
-                //proc_gv.DataSource = dataTable2;
-                //proc_gv.DataBind();
-                //dataTable.Clear();
-                //dataTable2.Clear();
+                showPics(); 
             }
             catch(SqlException)
             {
@@ -136,7 +130,8 @@ namespace WebApplication
                 String HasCode = reader[7].ToString();
                 if(HasCode.Equals("1") && HasImage.Equals("1") && HasLink.Equals("1"))
                 {
-                    String append = procedure + "\n" + link + "\n" + image + "\n" + filename;
+                    String data = File.ReadAllText(Server.MapPath("~/" + filename));
+                    String append = procedure + "\n" + link + "\n" + image + Environment.NewLine + data;
                     var datarow = dataTable.NewRow();
                     datarow["No."] = reader[1].ToString();
                     datarow["Procedures"] = append;
@@ -152,7 +147,8 @@ namespace WebApplication
                 }
                 else if(HasImage.Equals("1") && HasCode.Equals("1"))
                 {
-                    String append = procedure + "\n" + image + "\n" + filename;
+                    String data = File.ReadAllText(Server.MapPath("~/" + filename));
+                    String append = procedure + "\n" + image + Environment.NewLine + data;
                     var datarow = dataTable.NewRow();
                     datarow["No."] = reader[1].ToString();
                     datarow["Procedures"] = append;
@@ -160,7 +156,8 @@ namespace WebApplication
                 }
                 else if(HasLink.Equals("1") && HasCode.Equals("1"))
                 {
-                    String append = procedure + "\n" + link + "\n" + filename;
+                    String data = File.ReadAllText(Server.MapPath("~/" + filename));
+                    String append = procedure + "\n" + link + Environment.NewLine + data;
                     var datarow = dataTable.NewRow();
                     datarow["No."] = reader[1].ToString();
                     datarow["Procedures"] = append;
@@ -187,7 +184,8 @@ namespace WebApplication
                 else if(HasCode.Equals("1"))
                 {
                     //String script = File.ReadAllText(Path.Combine(Environment.CurrentDirectory, filename));
-                    String append = procedure + "\n" + filename;
+                    String data = File.ReadAllText(Server.MapPath("~/" + filename));
+                    String append = procedure + Environment.NewLine + data;
                     var datarow = dataTable.NewRow();
                     datarow["No."] = reader[1].ToString();
                     datarow["Procedures"] = append;
@@ -203,6 +201,28 @@ namespace WebApplication
             }
             proc_gv.DataSource = dataTable;
             proc_gv.DataBind();
+        }
+
+        protected void showPics()
+        {
+            if(int_no == 1)
+            {
+                exp1_image.Visible = true;
+                exp1_image.Width = 380;
+                exp1_image.Height = 480;
+            }
+            else if(int_no == 2)
+            {
+                exp2_image.Visible = true;
+                exp2_image.Width = 400;
+                exp2_image.Height = 420;
+            }
+            else if(int_no == 3)
+            {
+                exp3_image.Visible = true;
+                exp3_image.Width = 600;
+                exp3_image.Height = 300;
+            }
         }
     }
 }
