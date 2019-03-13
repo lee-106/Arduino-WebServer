@@ -165,6 +165,7 @@
     <Content Include="Interface3.aspx" />
     <Content Include="Interface4.aspx" />
     <Content Include="Paper.PNG" />
+    <Content Include="pepe.jpg" />
     <Content Include="Rock.PNG" />
     <Content Include="Scissors.PNG" />
     <Content Include="style.css" />
