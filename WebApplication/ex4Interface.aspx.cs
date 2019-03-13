@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO.Ports;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -16,8 +17,8 @@ namespace WebApplication
 
 
         SerialPort ArduinoPort1,ArduinoPort2;
+        int score1Int, score2Int;
 
-        
 
         protected void Page_Load(object sender, EventArgs asd)
         {
@@ -25,6 +26,7 @@ namespace WebApplication
             Image2.ImageUrl = "~/Rock.PNG";
             Panel1.Style.Add("display", "inline-block");
             Panel2.Style.Add("display", "inline-block");
+            
             if (Page.IsPostBack)
             {
 
@@ -44,7 +46,8 @@ namespace WebApplication
                     update_Lbl.Text = "Please fill in the textbox above with the proper port name (i.e. COM1)";
                 }
 
-
+                 score1Int = (int)Convert.ToUInt32(score1.Text);
+                 score2Int = (int)Convert.ToUInt32(score2.Text);
             }
 
         }
@@ -72,22 +75,48 @@ namespace WebApplication
         protected void Evaluate(object sender, EventArgs e)
         {
             Image1.ImageUrl = "~/Paper.PNG";
-            
-            ArduinoPort1.Open();
-            String temp1 = ArduinoPort1.ReadLine();
-            choice1.Text = temp1;
-            ArduinoPort1.Close();
-            if (temp1 == "R")
+            try
             {
-                Image1.ImageUrl = "~/Rock.PNG";
-                ViewState["selection1"] = "R";
+                string temp1 = "", temp2 = "";
+                ArduinoPort1.Open();
+                
+                temp1 = ArduinoPort1.ReadLine();
+                temp1 = temp1.ElementAt<char>(0)+"";
+                choiceText1.Text = temp1;
+                ArduinoPort1.Close();
+                ArduinoPort1.Dispose();
+
+                ArduinoPort2.Open();
+                temp2 = ArduinoPort2.ReadLine();
+                temp2 = temp2.ElementAt<char>(0) + "";
+                choiceText2.Text = temp2;
+                ArduinoPort2.Close();
+                ArduinoPort2.Dispose();
+
+
+                Thread.Sleep(100);
+                statusText1.Text = (temp1.Length > 1)? "Input Received " : "Error in Input";
+                
+                if (temp1 == "R"){Image1.ImageUrl = "~/Rock.PNG";}
+                else if (temp1 == "P"){Image1.ImageUrl = "~/Paper.PNG";}
+                else {Image1.ImageUrl = "~/Scissors.PNG";}
+
+                if (temp2 == "R") { Image2.ImageUrl = "~/Rock.PNG"; }
+                else if (temp2 == "P") { Image2.ImageUrl = "~/Paper.PNG"; }
+                else { Image2.ImageUrl = "~/Scissors.PNG"; }
+
+                if (temp1 == "R" && temp2 == "S"){score1Int++;}
+                else if(temp1 == "P" && temp2 == "R") { score1Int++; }
+                else if (temp1 == "S" && temp2 == "P") { score1Int++; }
+                else if (temp2 == "R" && temp1 == "S") { score2Int++; }
+                else if (temp2 == "P" && temp1 == "R") { score2Int++; }
+                else if (temp2 == "S" && temp1 == "P") { score2Int++; }
+                score1.Text = score1Int+"";
+                score2.Text = score2Int+"";
             }
-            else if(temp1 == "P"){
-                Image1.ImageUrl = "~/Paper.PNG";
-            }
-            else
+            catch
             {
-                Image1.ImageUrl = "~/Scissors.PNG";
+
             }
             
         }

@@ -94,13 +94,31 @@ namespace WebApplication {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Label2 control.
+        /// score1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label score1;
+        
+        /// <summary>
+        /// Label3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
+        
+        /// <summary>
+        /// score2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label score2;
         
         /// <summary>
         /// mainPanel control.
@@ -130,13 +148,22 @@ namespace WebApplication {
         protected global::System.Web.UI.WebControls.Label player1_label;
         
         /// <summary>
-        /// choice1 control.
+        /// choiceText1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label choice1;
+        protected global::System.Web.UI.WebControls.Label choiceText1;
+        
+        /// <summary>
+        /// statusText1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label statusText1;
         
         /// <summary>
         /// Image1 control.
@@ -164,6 +191,15 @@ namespace WebApplication {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label player2_label;
+        
+        /// <summary>
+        /// choiceText2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label choiceText2;
         
         /// <summary>
         /// Image2 control.

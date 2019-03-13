@@ -28,19 +28,23 @@
                 <asp:Label ID="update_Lbl" runat="server"></asp:Label>
             </p>
             <p>
-                <asp:Button ID="Connect_Btn" runat="server" OnClick="Connect_Btn_Click" Text="Connect" OnClientClick="return false;" AutoPostback = "false"/>
-                <asp:Button ID="evalBtn" runat="server" OnClick="Evaluate" Text="Evaluate" OnClientClick="return false;" AutoPostback = "false"/>
+                <asp:Button ID="Connect_Btn" runat="server" OnClick="Connect_Btn_Click" Text="Connect" />
+                <asp:Button ID="evalBtn" runat="server" OnClick="Evaluate" Text="Evaluate" />
             </p>
             &nbsp;<br />
             <asp:Panel ID="Panel3" runat="server">
                 <asp:Label ID="Label1" runat="server" Text="SCORE:" Font-Bold="True" Font-Italic="True" Font-Names="Aharoni" Font-Size="XX-Large"></asp:Label>
-                <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Italic="True" Font-Names="Aharoni" Font-Size="XX-Large" Font-Strikeout="False" Font-Underline="True" Text="0:0"></asp:Label>
+                <asp:Label ID="score1" runat="server" Font-Bold="True" Font-Italic="True" Font-Names="Aharoni" Font-Size="XX-Large" Font-Strikeout="False" Font-Underline="True" Text="0"></asp:Label>
+                <asp:Label ID="Label3" runat="server" Font-Bold="True" Font-Italic="True" Font-Names="Aharoni" Font-Size="XX-Large" Font-Strikeout="False" Font-Underline="True" Text=":"></asp:Label>
+                <asp:Label ID="score2" runat="server" Font-Bold="True" Font-Italic="True" Font-Names="Aharoni" Font-Size="XX-Large" Font-Strikeout="False" Font-Underline="True" Text="0"></asp:Label>
             </asp:Panel></br>
             <asp:Panel ID="mainPanel" runat="server" >
                 <asp:Panel ID="Panel1" runat="server" Width="240px" CssClass="inlineblock">
                     <asp:Label ID="player1_label" runat="server" Font-Names="Aharoni" Font-Overline="False" Font-Size="X-Large" Text="Player 1"></asp:Label>
                     <br>
-                    <asp:Label ID="choice1" runat="server" Font-Names="Aharoni" Font-Overline="False" Font-Size="X-Large" Text="Player 1"></asp:Label>
+                    <asp:Label ID="choiceText1" runat="server" Font-Names="Aharoni" Font-Overline="False" Font-Size="X-Large" Text="Rock"></asp:Label>
+                    <br>
+                    <asp:Label ID="statusText1" runat="server" Font-Names="Aharoni" Font-Overline="False" Font-Size="X-Large" Text="Status 1"></asp:Label>
                     </br>
                     <asp:Image ID="Image1" runat="server" Height="147px" Width="155px" />
                
@@ -50,6 +54,9 @@
                     <asp:Label ID="player2_label" runat="server" Font-Names="Aharoni" Font-Overline="False" Font-Size="X-Large" Text="Player 2"></asp:Label>
                     
                     <br />
+                    <asp:Label ID="choiceText2" runat="server" Font-Names="Aharoni" Font-Overline="False" Font-Size="X-Large" Text="Paper"></asp:Label>
+                    <br>
+                    
                     <asp:Image ID="Image2" runat="server" Height="147px" Width="155px" />
                 </asp:Panel>
      </asp:Panel>
