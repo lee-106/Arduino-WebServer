@@ -67,6 +67,15 @@ namespace WebApplication {
         protected global::System.Web.UI.WebControls.Image exp1_image;
         
         /// <summary>
+        /// exp4_image control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image exp4_image;
+        
+        /// <summary>
         /// proc_gv control.
         /// </summary>
         /// <remarks>

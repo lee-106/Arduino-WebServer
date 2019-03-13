@@ -52,7 +52,7 @@ namespace WebApplication
             else if(fromMain.Equals("Experiment 4: Rock, Paper, Scissors Game"))
             {
                 int_no = 4;
-                redirect = "Interface4.aspx";
+                redirect = "ex4Interface.aspx";
             }
 
             exp_number.Text = fromMain;
@@ -236,6 +236,12 @@ namespace WebApplication
                 exp3_image.Visible = true;
                 exp3_image.Width = 600;
                 exp3_image.Height = 300;
+            }
+            else if(int_no == 4)
+            {
+                exp4_image.Visible = true;
+                exp4_image.Width = 550;
+                exp4_image.Height = 560;
             }
         }
     }

@@ -136,6 +136,7 @@
     <Content Include="exp3.5.txt" />
     <Content Include="exp3.6.txt" />
     <Content Include="exp3.jpg" />
+    <Content Include="exp4.png" />
     <Content Include="experiments.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

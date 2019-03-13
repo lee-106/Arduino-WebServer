@@ -1,0 +1,37 @@
+int rPin = 7;//pin for rock
+int pPin = 6;//pin for paper
+int sPin = 5; //pin for scissors
+int submitPin = 4;
+char choice[] = "R";
+int rStatus, pStatus, sStatus;
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  pinMode(rPin, INPUT);
+  pinMode(pPin, INPUT);
+  pinMode(sPin, INPUT);
+  pinMode(submitPin, INPUT);
+  Serial.println("R");
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  rStatus = digitalRead(rPin);
+  pStatus = digitalRead(pPin);
+  sStatus = digitalRead(sPin);
+  
+    if (rStatus && !pStatus && !sStatus) { //rock is selected
+      
+    } else if(!rStatus && pStatus && !sStatus) {
+      strcpy(choice,"P");
+    } else if(!rStatus && !pStatus && sStatus) {
+      strcpy(choice,"S");
+    } else {
+      //do nothing
+    }
+    if (digitalRead(submitPin)== HIGH) {
+      Serial.println(choice);
+    }
+  
+  delay(1000);
+}
