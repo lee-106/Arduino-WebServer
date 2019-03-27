@@ -57,6 +57,11 @@
             <asp:TextBox ID="proctext" runat="server" Width="147px"></asp:TextBox>
         </p>
         <p>
+
+            <asp:FileUpload ID="fupl1" runat="server" />
+
+        </p>
+        <p>
             <asp:Button ID="Button1" runat="server" Text="Add" OnClick="Button1_Click" BackColor="#333333" BorderColor="#CCCCCC" Font-Size="Small" ForeColor="#CCCCCC" Width="75px" />
             <asp:Button ID="Button2" runat="server" Text="Edit" OnClick="Button2_Click" BackColor="#333333" BorderColor="#CCCCCC" ForeColor="#CCCCCC" Width="75px" />
 

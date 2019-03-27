@@ -27,7 +27,7 @@ CREATE TABLE [dbo].[matTable](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[objTable]    Script Date: 3/12/2019 10:20:08 PM ******/
+/****** Object:  Table [dbo].[objTable]    Script Date: 3/27/2019 9:47:25 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -38,17 +38,19 @@ CREATE TABLE [dbo].[objTable](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[proctable]    Script Date: 3/12/2019 10:20:08 PM ******/
+/****** Object:  Table [dbo].[proctable]    Script Date: 3/27/2019 9:47:25 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[proctable](
 	[instructions] [nvarchar](max) NOT NULL,
 	[in_number] [int] NOT NULL,
 	[number] [int] NOT NULL,
 	[HasImage] [int] NOT NULL,
-	[procedure_image] [nvarchar](max) NULL,
+	[procedure_image] [varchar](100) NULL,
 	[HasLink] [int] NOT NULL,
 	[procedure_link] [nvarchar](max) NULL,
 	[HasCode] [int] NOT NULL,
@@ -56,7 +58,9 @@ CREATE TABLE [dbo].[proctable](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[titleTable]    Script Date: 3/12/2019 10:20:08 PM ******/
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[titleTable]    Script Date: 3/27/2019 9:47:25 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -114,7 +118,7 @@ INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To connect the two Ard
 INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To display the score of both sides in the web application', 4)
 INSERT [dbo].[objTable] ([objective], [number]) VALUES (N'To display what the user inputs from the Arduino to the web applcation.', 4)
 INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Connect the serial port from the computer to the Arduino, and download the Arduino IDE at ', 1, 1, 0, NULL, 1, N'https://www.arduino.cc/en/Main/Software', 0, NULL)
-INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Build the LED circuit connecting to the Arduino as shown in the figure.', 2, 1, 1, NULL, 0, NULL, 0, NULL)
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Build the LED circuit connecting to the Arduino as shown in the figure.', 2, 1, 1, N'exp1.PNG', 0, NULL, 0, NULL)
 INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'In the Arduino IDE, the following code is to be written and compiled into the Arduino.', 3, 1, 0, NULL, 0, NULL, 1, N'exp1.3.txt')
 INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Identify the functionality of the Arduino circuit.', 4, 1, 0, NULL, 0, NULL, 0, NULL)
 INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'From the current circuit, implement a PWM functionality in order to change the light intensity using the function analogWrite(value). The value should range from 0 to 255. ', 5, 1, 0, NULL, 0, NULL, 0, NULL)
@@ -133,12 +137,13 @@ INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [pr
 INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'For the Arduino code, add the following at the start of the program to initialize the DHT11 pin and save button pin in Arduino. \n', 4, 3, 0, NULL, 0, NULL, 1, N'exp3.4.txt')
 INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Compile and upload to the Arduino.', 5, 3, 0, NULL, 0, NULL, 0, NULL)
 INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Click the ''Proceed'' button to enter the next web interface.', 6, 3, 0, NULL, 0, NULL, 0, NULL)
-INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Connect the buttons on the two Arduinos as shown on the figure.', 1, 4, 1, NULL, 0, NULL, 0, NULL)
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Connect the buttons on the two Arduinos as shown on the figure.', 1, 4, 1, N'exp4.png', 0, NULL, 0, NULL)
 INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Open the Arduino IDE program.', 2, 4, 0, NULL, 0, NULL, 0, NULL)
 INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Input the following code to the program to implement the Rock, Paper, Scissors Game.', 3, 4, 0, NULL, 0, NULL, 1, N'exp4.txt')
 INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Program the code to both Arduinos', 4, 4, 0, NULL, 0, NULL, 0, NULL)
 INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Connect the two Arduinos to the PC using the USB cables.', 5, 4, 0, NULL, 0, NULL, 0, NULL)
-INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Check the connection of the COM ports of the Arduinos by filling up the field boxes on the next page.', 6, 4, 0, NULL, 0, NULL, 0, NULL)INSERT [dbo].[titleTable] ([Number], [Title]) VALUES (1, N'Familiarization with Arduino')
+INSERT [dbo].[proctable] ([instructions], [in_number], [number], [HasImage], [procedure_image], [HasLink], [procedure_link], [HasCode], [procedure_code]) VALUES (N'Check the connection of the COM ports of the Arduinos by filling up the field boxes on the next page.', 6, 4, 0, NULL, 0, NULL, 0, NULL)
+INSERT [dbo].[titleTable] ([Number], [Title]) VALUES (1, N'Familiarization with Arduino')
 INSERT [dbo].[titleTable] ([Number], [Title]) VALUES (2, N'Interfacing Arduino with Web App')
 INSERT [dbo].[titleTable] ([Number], [Title]) VALUES (3, N'Sending Input from Arduino to Web App')
 INSERT [dbo].[titleTable] ([Number], [Title]) VALUES (4, N'Rock, Paper, and Scissors Game')

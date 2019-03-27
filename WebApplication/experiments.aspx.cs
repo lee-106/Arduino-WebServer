@@ -60,7 +60,6 @@ namespace WebApplication
 
             setupTables();
         }
-
         protected void setupTables()
         {
             try
@@ -97,7 +96,6 @@ namespace WebApplication
                 e.Row.Cells[0].Attributes["Width"] = "1px";
             }
         }
-
         protected void obj_gv_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if(e.Row.RowType == DataControlRowType.Header)
@@ -105,7 +103,6 @@ namespace WebApplication
                 e.Row.Cells[0].Text = "Objectives:";
             }
         }
-
         protected void proc_gv_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if(e.Row.RowType == DataControlRowType.Header)
@@ -116,17 +113,14 @@ namespace WebApplication
                 //e.Row.Cells[1].Attributes["Width"] = "100px";
             }
         }
-
         protected void Button2_Click(object sender, EventArgs e)
         {
             Response.Redirect("WebForm1.aspx");
         }
-
         protected void Button1_Click(object sender, EventArgs e)
         {
             Response.Redirect(redirect);
         }
-
         protected void manualBind()
         {
             SqlCommand command = new SqlCommand("SELECT * FROM [proctable] WHERE number = '" + int_no + "';", conn);
@@ -146,37 +140,43 @@ namespace WebApplication
                 if(HasCode.Equals("1") && HasImage.Equals("1") && HasLink.Equals("1"))
                 {
                     String data = File.ReadAllText(Server.MapPath("~/" + filename));
-                    String append = procedure + "\n" + link + "\n" + image + Environment.NewLine + data;
+                    String append = procedure + "\n" + image;                    
                     var datarow = dataTable.NewRow();
                     datarow["No."] = reader[1].ToString();
                     datarow["Procedures"] = append;
                     dataTable.Rows.Add(datarow);
+                    addLink(link, dataTable);
+                    addCode(data, dataTable);
                 }
                 else if(HasImage.Equals("1") && HasLink.Equals("1"))
                 {
-                    String append = procedure + "\n" + link + "\n" + image;
+                    String append = procedure + "\n" + image;
                     var datarow = dataTable.NewRow();
                     datarow["No."] = reader[1].ToString();
                     datarow["Procedures"] = append;
                     dataTable.Rows.Add(datarow);
+                    addLink(link, dataTable);
                 }
                 else if(HasImage.Equals("1") && HasCode.Equals("1"))
                 {
                     String data = File.ReadAllText(Server.MapPath("~/" + filename));
-                    String append = procedure + "\n" + image + Environment.NewLine + data;
+                    String append = procedure + "\n" + image;
                     var datarow = dataTable.NewRow();
                     datarow["No."] = reader[1].ToString();
                     datarow["Procedures"] = append;
                     dataTable.Rows.Add(datarow);
+                    addCode(data, dataTable);
                 }
                 else if(HasLink.Equals("1") && HasCode.Equals("1"))
                 {
                     String data = File.ReadAllText(Server.MapPath("~/" + filename));
-                    String append = procedure + "\n" + link + Environment.NewLine + data;
+                    String append = procedure;
                     var datarow = dataTable.NewRow();
                     datarow["No."] = reader[1].ToString();
                     datarow["Procedures"] = append;
                     dataTable.Rows.Add(datarow);
+                    addLink(link, dataTable);
+                    addCode(data, dataTable);
                 }
                 else if(HasImage.Equals("1"))
                 {
@@ -188,22 +188,22 @@ namespace WebApplication
                 }
                 else if (HasLink.Equals("1"))
                 {
-                    HyperLinkField hyp = new HyperLinkField();
-                    hyp.NavigateUrl = link;
-                    String append = procedure + "\n" + hyp.NavigateUrl;
+                    String append = procedure;
                     var datarow = dataTable.NewRow();
                     datarow["No."] = reader[1].ToString();
                     datarow["Procedures"] = append;
                     dataTable.Rows.Add(datarow);
+                    addLink(link, dataTable);
                 }
                 else if(HasCode.Equals("1"))
                 {
                     String data = File.ReadAllText(Server.MapPath("~/" + filename));
-                    String append = procedure + Environment.NewLine + data;
+                    String append = procedure;
                     var datarow = dataTable.NewRow();
                     datarow["No."] = reader[1].ToString();
                     datarow["Procedures"] = append;
                     dataTable.Rows.Add(datarow);
+                    addCode(data, dataTable);
                 }
                 else
                 {
@@ -216,33 +216,70 @@ namespace WebApplication
             proc_gv.DataSource = dataTable;
             proc_gv.DataBind();
         }
-
         protected void showPics()
         {
-            if(int_no == 1)
+            int proc_number;
+            if (int_no == 1)
             {
-                exp1_image.Visible = true;
-                exp1_image.Width = 380;
-                exp1_image.Height = 480;
+                proc_number = 2;
+                insertImage(proc_number);
+                //exp1_image.Visible = true;
+                //exp1_image.Width = 380;
+                //exp1_image.Height = 480;
             }
             else if(int_no == 2)
             {
-                exp2_image.Visible = true;
-                exp2_image.Width = 400;
-                exp2_image.Height = 420;
+                proc_number = 1;
+                insertImage(proc_number);
+                //exp2_image.Visible = true;
+                //exp2_image.Width = 400;
+                //exp2_image.Height = 420;
             }
             else if(int_no == 3)
             {
-                exp3_image.Visible = true;
-                exp3_image.Width = 600;
-                exp3_image.Height = 300;
+                proc_number = 1;
+                insertImage(proc_number);
+                //exp3_image.Visible = true;
+                //exp3_image.Width = 600;
+                //exp3_image.Height = 300;
             }
             else if(int_no == 4)
             {
-                exp4_image.Visible = true;
-                exp4_image.Width = 550;
-                exp4_image.Height = 560;
+                proc_number = 1;
+                insertImage(proc_number);
+                //exp4_image.Visible = true;
+                //exp4_image.Width = 550;
+                //exp4_image.Height = 560;
             }
+        }
+        protected void addLink(String l, DataTable table)
+        {
+            HyperLink hlink = new HyperLink();
+            hlink.NavigateUrl = l;
+            hlink.ID = "hyp";
+            var datarow2 = table.NewRow();
+            datarow2["No."] = "";
+            datarow2["Procedures"] = hlink.NavigateUrl;
+            table.Rows.Add(datarow2);
+        }
+        protected void addCode(String d, DataTable table)
+        {
+            var datarow = table.NewRow();
+            datarow["No."] =  "";
+            datarow["Procedures"] = d;
+            table.Rows.Add(datarow);
+        }
+        protected void insertImage(int n)
+        {
+            String filename = "";
+            SqlCommand command = new SqlCommand("SELECT procedure_image FROM [proctable] WHERE number = '" + int_no + "' AND in_number = '" + n + "';", conn);
+            SqlDataReader reader2 = command.ExecuteReader();
+            while (reader2.Read())
+            {
+                filename = reader2["procedure_image"].ToString();
+            }
+            test_image.ImageUrl = "~/" + filename;
+            test_image.Visible = true;
         }
     }
 }
