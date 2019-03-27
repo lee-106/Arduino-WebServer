@@ -14,21 +14,11 @@
 
         </p>
         <p>
-
-            <asp:Image ID="exp2_image" runat="server" ImageUrl="~/exp2.png" Width="35px" Visible="False" />
-
-            <asp:Image ID="exp3_image" runat="server" Width="35px" ImageUrl="~/exp3.jpg" Visible="False"  />
-
-            <asp:Image ID="exp1_image" runat="server" ImageUrl="~/exp1.PNG" Visible="False" />
-
-            <asp:Image ID="exp4_image" runat="server" ImageUrl="~/exp4.png" Visible="False" />
-
             <asp:Image ID="test_image" runat="server" Visible="False" />
-
-        </p>
+                    </p>
         <p>
 
-            <asp:GridView ID="proc_gv" runat="server" GridLines="None" Width="600px" OnRowDataBound="proc_gv_RowDataBound">
+            <asp:GridView ID="proc_gv" runat="server" GridLines="None" Width="600px" OnRowDataBound="proc_gv_RowDataBound" OnSelectedIndexChanged="proc_gv_SelectedIndexChanged" >
                 <HeaderStyle ForeColor="#999966" />
                 <RowStyle ForeColor="#FFFFCC" />
             </asp:GridView>
