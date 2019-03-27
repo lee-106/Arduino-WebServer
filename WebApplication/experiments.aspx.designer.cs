@@ -40,42 +40,6 @@ namespace WebApplication {
         protected global::System.Web.UI.WebControls.GridView obj_gv;
         
         /// <summary>
-        /// exp2_image control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image exp2_image;
-        
-        /// <summary>
-        /// exp3_image control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image exp3_image;
-        
-        /// <summary>
-        /// exp1_image control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image exp1_image;
-        
-        /// <summary>
-        /// exp4_image control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image exp4_image;
-        
-        /// <summary>
         /// test_image control.
         /// </summary>
         /// <remarks>

@@ -223,33 +223,29 @@ namespace WebApplication
             {
                 proc_number = 2;
                 insertImage(proc_number);
-                //exp1_image.Visible = true;
-                //exp1_image.Width = 380;
-                //exp1_image.Height = 480;
+                test_image.Width = 380;
+                test_image.Height = 480;
             }
             else if(int_no == 2)
             {
                 proc_number = 1;
                 insertImage(proc_number);
-                //exp2_image.Visible = true;
-                //exp2_image.Width = 400;
-                //exp2_image.Height = 420;
+                test_image.Width = 400;
+                test_image.Height = 420;
             }
             else if(int_no == 3)
             {
                 proc_number = 1;
                 insertImage(proc_number);
-                //exp3_image.Visible = true;
-                //exp3_image.Width = 600;
-                //exp3_image.Height = 300;
+                test_image.Width = 600;
+                test_image.Height = 300;
             }
             else if(int_no == 4)
             {
                 proc_number = 1;
                 insertImage(proc_number);
-                //exp4_image.Visible = true;
-                //exp4_image.Width = 550;
-                //exp4_image.Height = 560;
+                test_image.Width = 550;
+                test_image.Height = 560;
             }
         }
         protected void addLink(String l, DataTable table)
@@ -280,6 +276,11 @@ namespace WebApplication
             }
             test_image.ImageUrl = "~/" + filename;
             test_image.Visible = true;
+        }
+
+        protected void proc_gv_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

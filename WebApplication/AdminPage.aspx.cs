@@ -27,15 +27,21 @@ namespace WebApplication
             try
             {
                 conn.Open();
+                if(!objtext.Text.Equals(""))
+                {
                     SqlCommand cmd = new SqlCommand("INSERT INTO [objTable](objective, number) VALUES (@objective, @index) ", conn);
                     cmd.Parameters.AddWithValue("@objective", objtext.Text);
-                    cmd.Parameters.AddWithValue("@index", (expddlist.SelectedIndex+1)+"");
+                    cmd.Parameters.AddWithValue("@index", (expddlist.SelectedIndex + 1) + "");
                     cmd.ExecuteNonQuery();
+                }
+                if(!proctext.Text.Equals("") && !procntxt.Text.Equals(""))
+                {
                     SqlCommand cmd1 = new SqlCommand("INSERT INTO [proctable](instructions, in_number, number) VALUES (@instructions, @in_number, @number) ", conn);
                     cmd1.Parameters.AddWithValue("@instructions", proctext.Text);
                     cmd1.Parameters.AddWithValue("@in_number", procntxt.Text);
-                cmd1.Parameters.AddWithValue("@number", (expddlist.SelectedIndex + 1) + "");
-                cmd1.ExecuteNonQuery();
+                    cmd1.Parameters.AddWithValue("@number", (expddlist.SelectedIndex + 1) + "");
+                    cmd1.ExecuteNonQuery();
+                }
                 conn.Close();
                 Response.Redirect("AdminPage.aspx");
             }
@@ -57,9 +63,13 @@ namespace WebApplication
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE [proctable] SET instructions = @instructions WHERE number = '" + (expddlist.SelectedIndex + 1) + "' AND in_number = '" + procntxt.Text + "';",conn);
-                cmd.Parameters.AddWithValue("@instructions", proctext.Text);
-                cmd.ExecuteNonQuery();
+                if(!procntxt.Text.Equals("") && !proctext.Text.Equals(""))
+                {
+
+                    SqlCommand cmd = new SqlCommand("UPDATE [proctable] SET instructions = @instructions WHERE number = '" + (expddlist.SelectedIndex + 1) + "' AND in_number = '" + procntxt.Text + "';", conn);
+                    cmd.Parameters.AddWithValue("@instructions", proctext.Text);
+                    cmd.ExecuteNonQuery();
+                }
                 if (fupl1.HasFile) uploadFile();
                 Response.Redirect("AdminPage.aspx");
             }
