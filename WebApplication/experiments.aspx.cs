@@ -54,9 +54,9 @@ namespace WebApplication
                 int_no = 4;
                 redirect = "ex4Interface.aspx";
             }
-
             exp_number.Text = fromMain;
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["MyWebDBConnectionString"].ConnectionString);
+
 
             setupTables();
         }
